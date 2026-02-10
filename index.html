@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My JS Camp</title>
+    <style>
+      :root {
+        --primary-400: oklch(0.63 0.14 297.53);
+        --primary-500: oklch(0.4867 0.1801 297.53);
+        --primary-600: oklch(0.42 0.17 297.53);
+        --bg-0: oklch(0.985 0.012 300);
+        --bg-1: oklch(0.972 0.014 300);
+        --bg-2: oklch(0.955 0.016 300);
+        --border: oklch(0.885 0.02 300);
+        --text-1: oklch(0.19 0.02 295);
+        --text-2: oklch(0.32 0.018 295);
+        --shadow: 0 18px 60px oklch(25.016% 0.01894 294.131 / 0.25);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        color: var(--text-1);
+        background:
+          radial-gradient(800px 800px at 10% 0%, #cebcff 0%, transparent 60%),
+          radial-gradient(
+            900px 900px at 90% 12%,
+            oklch(96.089% 0.06676 146.411) 0%,
+            transparent 55%
+          ),
+          var(--bg-0);
+        min-height: 100vh;
+      }
+
+      header {
+        padding: 48px 20px 8px;
+        text-align: center;
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        font-size: clamp(2rem, 3vw + 1.6rem, 3.4rem);
+        letter-spacing: -0.02em;
+      }
+
+      p.lead {
+        margin: 0 auto;
+        max-width: 720px;
+        color: var(--text-2);
+        font-size: 1.05rem;
+        line-height: 1.6;
+      }
+
+      main {
+        max-width: 980px;
+        margin: 32px auto 72px;
+        padding: 0 20px;
+      }
+
+      .development-iterations {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 18px;
+      }
+
+      .stage {
+        background: linear-gradient(140deg, #ffffff 0%, var(--bg-1) 60%);
+        border-radius: 18px;
+        padding: 26px;
+        box-shadow: var(--shadow);
+        border: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
+        display: grid;
+        gap: 12px;
+        position: relative;
+        overflow: hidden;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .stage::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          color-mix(in oklab, var(--primary-400) 10%, transparent) 0%,
+          transparent 35%
+        );
+        opacity: 0.6;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .stage > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .stage:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 22px 70px oklch(25% 0.02 294 / 0.32);
+        border-color: var(--primary-400);
+      }
+
+      .stage h2 {
+        margin: 0;
+        font-size: 1.4rem;
+        letter-spacing: -0.01em;
+      }
+
+      .stage .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: 0.7rem;
+        color: var(--primary-600);
+        font-weight: 700;
+        background: color-mix(in oklab, var(--primary-400) 12%, transparent);
+        padding: 5px 9px;
+        border-radius: 10px;
+        justify-self: start;
+      }
+
+      .stage .meta {
+        color: var(--text-2);
+        font-size: 0.95rem;
+      }
+
+      .stage h3 {
+        margin: 8px 0 0;
+        font-size: 1.05rem;
+      }
+
+      .stage ul {
+        margin: 6px 0 0;
+        padding-left: 18px;
+        color: var(--text-2);
+      }
+
+      .stage ul li + li {
+        margin-top: 4px;
+      }
+
+      .stage p {
+        margin: 0;
+        color: var(--text-2);
+      }
+
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 10px;
+      }
+
+      a.link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 14px;
+        border-radius: 999px;
+        text-decoration: none;
+        color: var(--text-1);
+        border: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
+        transition:
+          transform 0.2s ease,
+          border-color 0.2s ease,
+          box-shadow 0.2s ease;
+        background: color-mix(in oklab, var(--bg-2) 80%, white);
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+
+      a.link:hover {
+        border-color: var(--primary-500);
+        box-shadow: 0 0 14px 3px oklch(60% 0.08 295 / 0.35);
+      }
+
+      a.link span {
+        color: var(--primary-500);
+        font-weight: 700;
+      }
+
+      footer {
+        text-align: center;
+        color: var(--text-2);
+        font-size: 0.9rem;
+        padding: 12px 20px 32px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>My JS Camp</h1>
+      <p class="lead">
+        Quick paths to each project stage. Pick a folder and keep iterating without fighting the
+        default index.
+      </p>
+    </header>
+
+    <main>
+      <section class="development-iterations" id="development-iterations"></section>
+    </main>
+
+    <footer>Built to jump quickly between stages. Update titles as folders evolve.</footer>
+    <script>
+      const iterationsRoot = document.getElementById('development-iterations')
+
+      fetch('./development-iterations.json')
+        .then((response) => response.json())
+        .then((developmentIterations) => {
+          iterationsRoot.innerHTML = developmentIterations
+            .map((stage) => {
+              const paragraphs = stage.paragraphs.map((text) => `<p>${text}</p>`).join('')
+              const listItems = stage.listItems.map((item) => `<li>${item}</li>`).join('')
+              const links = stage.links
+                .map(
+                  (link) =>
+                    `<a class="link" href="${link.href}"><span>${link.icon}</span> ${link.label}</a>`
+                )
+                .join('')
+
+              return `
+              <article class="stage">
+                <small class="eyebrow">${stage.eyebrow}</small>
+                <h2>${stage.title}</h2>
+                <p class="meta">${stage.meta}</p>
+                ${paragraphs}
+                <h3>${stage.listTitle}</h3>
+                <ul>${listItems}</ul>
+                <div class="links">${links}</div>
+              </article>
+            `
+            })
+            .join('')
+        })
+        .catch(() => {
+          iterationsRoot.innerHTML =
+            '<p>Unable to load development iterations data. Please refresh.</p>'
+        })
+    </script>
+  </body>
+</html>

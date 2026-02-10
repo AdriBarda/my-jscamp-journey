@@ -1,0 +1,79 @@
+[
+  {
+    "eyebrow": "Stage 01",
+    "title": "Static minimal version",
+    "meta": "Base layout and static routes.",
+    "paragraphs": [
+      "This stage focuses on the core HTML/CSS structure and basic navigation. It is intentionally simple, so you can iterate on layout, spacing, and copy without build steps.",
+      "I kept this stage minimal on purpose, so we can validate the layout, typography, and content flow before introducing interactivity or any framework."
+    ],
+    "listTitle": "Included",
+    "listItems": [
+      "Homepage layout + job listings",
+      "Detail view skeleton",
+      "Shared styles and spacing"
+    ],
+    "links": [
+      {
+        "href": "static-minimal-version/index.html",
+        "label": "Open index.html",
+        "icon": "▶"
+      },
+      {
+        "href": "static-minimal-version/jobs.html",
+        "label": "Open jobs.html",
+        "icon": "▶"
+      },
+      {
+        "href": "static-minimal-version/jobDetails.html",
+        "label": "Open jobDetails.html",
+        "icon": "▶"
+      }
+    ]
+  },
+  {
+    "eyebrow": "Stage 02",
+    "title": "React: first steps",
+    "meta": "Early experiments and fundamentals.",
+    "paragraphs": [
+      "This is just to showcase how react can be added to any existing project in a simple way. In a nutshell: This is jsut an iteration from the minimal version (vanilla) to see how react works under the hood 🤓.",
+      "Caution! This is not the recommended way of working with react! In a real project it would be imperative to use bundlers like Vite."
+    ],
+    "listTitle": "Why?",
+    "listItems": [
+      "It provides structure",
+      "It is much more performant (~ x100 times more)",
+      "It's the new modern standard",
+      "Easier to organise and maintain"
+    ],
+    "links": [
+      {
+        "href": "react-first-steps/react.html",
+        "label": "Open react.html",
+        "icon": "▶"
+      },
+      {
+        "href": "react-first-steps/styles.css",
+        "label": "Open styles.css",
+        "icon": "▦"
+      }
+    ]
+  },
+  {
+    "eyebrow": "Stage 03",
+    "title": "React App (Vite)",
+    "meta": "Main React implementation with a Vite dev server.",
+    "paragraphs": [
+      "This is the primary React version of the project. It uses Vite for fast local development and a production build."
+    ],
+    "listTitle": "Includes",
+    "listItems": ["Component-based UI", "Vite dev server (HMR)", "Production build output"],
+    "links": [
+      {
+        "href": "readme.html",
+        "label": "Open React README",
+        "icon": "▶"
+      }
+    ]
+  }
+]

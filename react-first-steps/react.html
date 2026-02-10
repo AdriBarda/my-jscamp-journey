@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <title>MyDevJobs - Jobs</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="List of job offers with filtering to find your dream job." />
+    <link rel="stylesheet" href="./styles.css" />
+
+    <script type="module">
+      import React from 'https://esm.sh/react?dev'
+      import ReactDOM from 'https://esm.sh/react-dom/client?dev'
+
+      window.React = React
+      window.ReactDOM = ReactDOM
+    </script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // React element
+      const title = <h1 style={{ color: 'oklch(0.4867 0.1801 297.53)' }}>Hello, React.js</h1>
+
+      // React component
+      function JobCard({ data, title, company, location, summary }) {
+        const [isApplied, setIsApplied] = React.useState(false)
+
+        function handleClick() {
+          setIsApplied(true)
+        }
+
+        const buttonText = isApplied ? 'Applied!' : 'Apply'
+        const buttonClass = isApplied ? 'is-applied' : ''
+        return (
+          <article
+            className="job-listing-card"
+            data-location={data?.locationCode}
+            data-experience={data?.experience}
+            data-technology={data?.technology}
+          >
+            <div>
+              <h3>{title}</h3>
+              <small>
+                {company} | {location}
+              </small>
+              <p>{summary}</p>
+            </div>
+            <button
+              className={`btn-apply-job ${buttonClass}`}
+              disabled={isApplied}
+              onClick={handleClick}
+            >
+              {buttonText}
+            </button>
+          </article>
+        )
+      }
+
+      function App() {
+        return (
+          <div className="jobs-listing">
+            <JobCard
+              title="Software Engineer"
+              company="Maple Inc."
+              location="remote"
+              summary="We are looking for a passionate software engineer with experience in web development and modern JavaScript frameworks, preferably React and Node.js. The perfect candidate must be a team player and have great communication skills."
+              data={{
+                technology: ['javascript', 'react', 'node'],
+                locationCode: 'remote',
+                experience: 'senior'
+              }}
+            />
+            <JobCard
+              title="Frontend Engineer"
+              company="Nesflis"
+              location="remote"
+              summary="We are looking for a frontend engineer with strong React skills, a good eye for UI details, and experience working with design systems. Familiarity with TypeScript and modern testing tools is a plus."
+            />
+            <JobCard
+              title="Software Engineer II"
+              company="Doors"
+              location="remote"
+              summary="We are looking for a passionate data analyst with experience in data visualization and statistical analysis. The ideal candidate should be proficient in Python and SQL, and have strong problem-solving skills."
+            />
+          </div>
+        )
+      }
+      const rootEl = document.querySelector('#root')
+      const root = ReactDOM.createRoot(rootEl)
+      root.render(<App />)
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-device-imac-code"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M11.5 17h-7.5a1 1 0 0 1 -1 -1v-12a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v9" />
+          <path d="M3 13h18" />
+          <path d="M8 21h3.5" />
+          <path d="M10 17l-.5 4" />
+          <path d="M20 21l2 -2l-2 -2" />
+          <path d="M17 17l-2 2l2 2" />
+        </svg>
+        MyDevJobs
+      </h1>
+      <nav>
+        <a href="/react-first-steps/">Home</a>
+        <a href="jobs.html">Job Offers</a>
+        <a href="">Companies</a>
+        <a href="">Salaries</a>
+      </nav>
+      <div>
+        <devjobs-avatar></devjobs-avatar>
+        <!-- <a href="">Login</a> -->
+      </div>
+    </header>
+    <main>
+      <section class="jobs-search">
+        <h1>React.js first steps</h1>
+      </section>
+      <section class="jobs-results">
+        <h2>Search Results</h2>
+        <div id="root"></div>
+      </section>
+    </main>
+    <footer>
+      <small> &copy; MyDevJobs 2026. Almost all rights reserved </small>
+    </footer>
+  </body>
+</html>

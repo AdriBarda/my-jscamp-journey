@@ -1,42 +1,25 @@
-import { useState } from 'react'
 import { Footer } from './components/Footer.jsx'
 import { Header } from './components/Header.jsx'
-import { JobListings } from './components/JobListings.jsx'
-import { Pagination } from './components/Pagination.jsx'
-import { SearchFormSection } from './components/SearchFormSection.jsx'
-
-import jobsData from './data.json'
-
-const RESULTS_PER_PAGE = 4
+import { NotFoundPage } from './pages/404.jsx'
+import { HomePage } from './pages/Home.jsx'
+import { SearchPage } from './pages/Search.jsx'
 
 function App() {
-  const [currentPage, setCurrentPage] = useState(1)
-  const totalPages = Math.ceil(jobsData.length / RESULTS_PER_PAGE)
+  const currentPath = window.location.pathname
 
-  const pageResults = jobsData.slice(
-    (currentPage - 1) * RESULTS_PER_PAGE,
-    currentPage * RESULTS_PER_PAGE
-  )
-  const handlePageChange = (page) => {
-    setCurrentPage(page)
+  let page = <NotFoundPage />
+
+  if (currentPath === '/') {
+    page = <HomePage />
+  } else if (currentPath === '/search') {
+    page = <SearchPage />
   }
-
   return (
-    <div className="app">
+    <>
       <Header />
-      <main>
-        <SearchFormSection />
-        <section className="jobs-results">
-          <JobListings jobs={pageResults} />
-          <Pagination
-            currentPage={currentPage}
-            totalPages={totalPages}
-            onPageChange={handlePageChange}
-          />
-        </section>
-      </main>
+      {page}
       <Footer />
-    </div>
+    </>
   )
 }
 

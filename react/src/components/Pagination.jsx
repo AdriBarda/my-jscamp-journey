@@ -1,11 +1,12 @@
+import styles from './Pagination.module.css'
 export function Pagination({ currentPage = 1, totalPages = 10, onPageChange }) {
   const pages = Array.from({ length: totalPages }, (_, index) => index + 1)
 
   const isFirstPage = currentPage === 1
   const isLastPage = currentPage === totalPages
 
-  const stylePrevButton = isFirstPage ? 'is-disabled' : ''
-  const styleNextButton = isLastPage ? 'is-disabled' : ''
+  const stylePrevButton = isFirstPage ? styles.isDisabled : ''
+  const styleNextButton = isLastPage ? styles.isDisabled : ''
 
   function handlePrevClick(event) {
     event.preventDefault()
@@ -28,7 +29,7 @@ export function Pagination({ currentPage = 1, totalPages = 10, onPageChange }) {
     }
   }
   return (
-    <nav className="pagination">
+    <nav className={styles.pagination}>
       <a href="#" className={stylePrevButton} onClick={handlePrevClick}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +52,7 @@ export function Pagination({ currentPage = 1, totalPages = 10, onPageChange }) {
         <a
           key={page}
           href="#"
-          className={currentPage === page ? 'is-active' : ''}
+          className={currentPage === page ? styles.isActive : ''}
           onClick={(event) => handleChangePage(event, page)}
         >
           {page}

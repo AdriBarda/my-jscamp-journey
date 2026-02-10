@@ -1,15 +1,16 @@
 import { useId, useState } from 'react'
 import styles from './SearchFormSection.module.css'
 
-export function SearchFormSection({ onSearch, onTextFilter }) {
-  const idText = useId()
-  const idTechnology = useId()
-  const idLocation = useId()
-  const idExperienceLevel = useId()
-
-  const [focusedField, setFocusedField] = useState(null)
-
-  const handleOnSubmit = (event) => {
+const useSearchForm = ({
+  idText,
+  idTechnology,
+  idLocation,
+  idExperienceLevel,
+  onSearch,
+  onTextFilter
+}) => {
+  const [searchText, setSearchText] = useState('')
+  const handleSubmit = (event) => {
     event.preventDefault()
 
     const formData = new FormData(event.currentTarget)
@@ -28,12 +29,36 @@ export function SearchFormSection({ onSearch, onTextFilter }) {
     onTextFilter(text)
   }
 
+  return {
+    searchText,
+    handleSubmit,
+    handleTextChange
+  }
+}
+
+export function SearchFormSection({ onSearch, onTextFilter }) {
+  const idText = useId()
+  const idTechnology = useId()
+  const idLocation = useId()
+  const idExperienceLevel = useId()
+
+  const [focusedField, setFocusedField] = useState(null)
+
+  const { handleSubmit, handleTextChange } = useSearchForm({
+    idText,
+    idTechnology,
+    idLocation,
+    idExperienceLevel,
+    onSearch,
+    onTextFilter
+  })
+
   return (
     <section className="jobs-search">
       <h1>Find the next step in your career</h1>
       <p>Explore thousands of opportunities in the IT industry.</p>
 
-      <form className="search-form" onChange={handleOnSubmit} id="job-search-form" role="search">
+      <form className="search-form" onChange={handleSubmit} id="job-search-form" role="search">
         <div className="search-bar">
           <svg
             xmlns="http://www.w3.org/2000/svg"

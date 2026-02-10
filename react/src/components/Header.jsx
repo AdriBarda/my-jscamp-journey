@@ -25,6 +25,7 @@ export function Header() {
       </Link>
       <nav>
         <Link href="/search">Job Offers</Link>
+        <Link href="/contact">Contact</Link>
       </nav>
       <div>
         <devjobs-avatar></devjobs-avatar>

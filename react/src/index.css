@@ -29,6 +29,9 @@
   --bg-3: oklch(0.93 0.018 300); /* subtle fill */
 
   --border: oklch(0.885 0.02 300);
+  --border-danger: oklch(0.55 0.25 26.04);
+  --border-success: oklch(0.75 0.1 150);
+
   --muted: oklch(0.91 0.018 300);
 
   /* Texto (en claro: texto oscuro neutro con un toque frío) */
@@ -45,9 +48,14 @@
 
   --text: var(--text-1);
   --text-muted: var(--text-2);
+  --text-success: oklch(64.889% 0.19018 144.979);
+
+  /* Success */
+  --success-background: oklch(0.95 0.05 150);
 
   /* Estados útiles */
   --focus-ring: oklch(72.068% 0.08928 297.648);
+  --focus-ring-danger: oklch(75.972% 0.1434 20.964 / 0.937);
   --shadow: oklch(25.016% 0.01894 294.131 / 0.25); /* si quieres usarlo en box-shadow con alpha */
 }
 
@@ -169,7 +177,8 @@ form {
   padding-inline: 1rem;
 }
 
-form > div {
+.search-form > div {
+  height: 3.5rem;
   display: flex;
   align-items: center;
   background-color: var(--surface);
@@ -179,7 +188,7 @@ form > div {
   gap: 0.5rem;
 }
 
-form span {
+.search-form span {
   padding-left: 0.75rem;
   color: var(--text-muted);
   display: flex;
@@ -187,7 +196,7 @@ form span {
   flex-shrink: 0;
 }
 
-form input[type='text'] {
+.search-form input[type='text'] {
   flex: 1;
   background: transparent;
   border: none;
@@ -198,7 +207,7 @@ form input[type='text'] {
   font-family: inherit;
 }
 
-form input[type='text']::placeholder {
+.search-form input[type='text']::placeholder {
   color: var(--text-3);
 }
 
@@ -518,4 +527,19 @@ article {
   display: inline-block;
   margin-top: 0.5rem;
   color: var(--text-muted);
+}
+
+.success-alert {
+  width: 42rem;
+  height: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  font-size: 0.875rem;
+  background-color: var(--success-background);
+  color: var(--text-success);
+  border: 1.5px solid var(--border-success);
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
 }

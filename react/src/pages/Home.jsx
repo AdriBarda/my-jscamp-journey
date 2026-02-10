@@ -26,7 +26,7 @@ export function HomePage() {
           Join the biggest developer community in the world and take the next step in your career.
         </p>
 
-        <form role="search" onSubmit={handleSearch}>
+        <form className="search-form" role="search" onSubmit={handleSearch}>
           <div>
             <svg
               width="24"

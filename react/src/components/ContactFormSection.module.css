@@ -92,6 +92,7 @@
 }
 
 .contactFormSection {
+  position: relative;
   min-height: auto !important;
 }
 

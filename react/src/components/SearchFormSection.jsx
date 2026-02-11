@@ -1,4 +1,4 @@
-import { useId, useState } from 'react'
+import { useId, useRef, useState } from 'react'
 import styles from './SearchFormSection.module.css'
 import { useSearchForm } from '../hooks/useSearchForm'
 
@@ -9,6 +9,9 @@ export function SearchFormSection({ onSearch, onTextFilter, hasFilters, onReset,
   const idExperienceLevel = useId()
 
   const [focusedField, setFocusedField] = useState(null)
+
+  const formRef = useRef()
+  const searchBarRef = useRef()
 
   const { handleSubmit, handleTextChange } = useSearchForm({
     idText,
@@ -21,8 +24,15 @@ export function SearchFormSection({ onSearch, onTextFilter, hasFilters, onReset,
 
   const handleReset = () => {
     // I'm taking this approach since I have a hybrid controled form for search and non formData for filters...
-    document.querySelector('.search-form').reset()
+    // Updated this to useRef() usage since it was not necesary to use document.getSelector...
+    formRef.current.reset()
     onReset()
+  }
+
+  const handleClearSearch = () => {
+    searchBarRef.current.value = ''
+    onTextFilter('')
+    searchBarRef.current.focus()
   }
 
   return (
@@ -30,7 +40,13 @@ export function SearchFormSection({ onSearch, onTextFilter, hasFilters, onReset,
       <h1>Find the next step in your career</h1>
       <p>Explore thousands of opportunities in the IT industry.</p>
 
-      <form className="search-form" onChange={handleSubmit} id="job-search-form" role="search">
+      <form
+        ref={formRef}
+        className="search-form"
+        onChange={handleSubmit}
+        id="job-search-form"
+        role="search"
+      >
         <div className="search-bar">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -48,6 +64,7 @@ export function SearchFormSection({ onSearch, onTextFilter, hasFilters, onReset,
             <path d="M3 10a7 7 0 1 0 14 0 7 7 0 1 0-14 0m18 11-6-6" />
           </svg>
           <input
+            ref={searchBarRef}
             id={idText}
             name={idText}
             type="text"
@@ -58,7 +75,30 @@ export function SearchFormSection({ onSearch, onTextFilter, hasFilters, onReset,
             className={focusedField === 'search' ? styles.inputFocused : ''}
             defaultValue={initialText}
           />
-          <button type="submit">Search</button>
+          <button
+            type="button"
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              padding: '0.5rem'
+            }}
+            onClick={handleClearSearch}
+          >
+            <svg
+              width="24"
+              height="24"
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="1.5"
+              viewBox="0 0 24 24"
+            >
+              <path fill="none" stroke="none" d="M0 0h24v24H0z" />
+              <path d="M18 6 6 18M6 6l12 12" />
+            </svg>
+          </button>
         </div>
 
         <div className={styles.filtersBar}>

@@ -1,6 +1,4 @@
-import { useState } from 'react'
-
-let timeoutId = null
+import { useState, useRef } from 'react'
 
 export const useSearchForm = ({
   idText,
@@ -10,7 +8,9 @@ export const useSearchForm = ({
   onSearch,
   onTextFilter
 }) => {
+  const timeoutId = useRef(null)
   const [searchText, setSearchText] = useState('')
+
   const handleSubmit = (event) => {
     event.preventDefault()
 
@@ -32,11 +32,11 @@ export const useSearchForm = ({
     const text = event.target.value
     setSearchText(text)
 
-    if (timeoutId) {
-      clearTimeout(timeoutId)
+    if (timeoutId.current) {
+      clearTimeout(timeoutId.current)
     }
 
-    timeoutId = setTimeout(() => {
+    timeoutId.current = setTimeout(() => {
       onTextFilter(text)
     }, 500)
   }

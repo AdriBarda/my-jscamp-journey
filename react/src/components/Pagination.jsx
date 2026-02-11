@@ -8,29 +8,35 @@ export function Pagination({ currentPage = 1, totalPages = 10, onPageChange }) {
   const stylePrevButton = isFirstPage ? styles.isDisabled : ''
   const styleNextButton = isLastPage ? styles.isDisabled : ''
 
-  function handlePrevClick(event) {
+  const handlePrevClick = (event) => {
     event.preventDefault()
     if (!isFirstPage) {
       onPageChange(currentPage - 1)
     }
   }
 
-  function handleNextClick(event) {
+  const handleNextClick = (event) => {
     event.preventDefault()
     if (!isLastPage) {
       onPageChange(currentPage + 1)
     }
   }
 
-  function handleChangePage(event, page) {
+  const handleChangePage = (event, page) => {
     event.preventDefault()
     if (page !== currentPage) {
       onPageChange(page)
     }
   }
+
+  const buildPageURL = (page) => {
+    const url = new URL(window.location)
+    url.searchParams.set('page', page)
+    return `${url.pathname}?${url.searchParams.toString()}`
+  }
   return (
     <nav className={styles.pagination}>
-      <a href="#" className={stylePrevButton} onClick={handlePrevClick}>
+      <a href={buildPageURL(currentPage - 1)} className={stylePrevButton} onClick={handlePrevClick}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -51,7 +57,7 @@ export function Pagination({ currentPage = 1, totalPages = 10, onPageChange }) {
       {pages.map((page) => (
         <a
           key={page}
-          href="#"
+          href={buildPageURL(page)}
           className={currentPage === page ? styles.isActive : ''}
           onClick={(event) => handleChangePage(event, page)}
         >
@@ -59,7 +65,7 @@ export function Pagination({ currentPage = 1, totalPages = 10, onPageChange }) {
         </a>
       ))}
 
-      <a href="#" className={styleNextButton} onClick={handleNextClick}>
+      <a href={buildPageURL(currentPage + 1)} className={styleNextButton} onClick={handleNextClick}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"

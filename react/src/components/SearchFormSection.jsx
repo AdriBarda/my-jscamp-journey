@@ -2,7 +2,14 @@ import { useId, useRef, useState } from 'react'
 import styles from './SearchFormSection.module.css'
 import { useSearchForm } from '../hooks/useSearchForm'
 
-export function SearchFormSection({ onSearch, onTextFilter, hasFilters, onReset, initialText }) {
+export function SearchFormSection({
+  onSearch,
+  onTextFilter,
+  hasFilters,
+  onReset,
+  initialText,
+  initialFilters
+}) {
   const idText = useId()
   const idTechnology = useId()
   const idLocation = useId()
@@ -112,6 +119,7 @@ export function SearchFormSection({ onSearch, onTextFilter, hasFilters, onReset,
               onFocus={() => setFocusedField('technology')}
               onBlur={() => setFocusedField(null)}
               className={focusedField === 'technology' ? styles.inputFocused : ''}
+              defaultValue={initialFilters.technology}
             >
               <option value="">All Technologies</option>
               <optgroup label="Frontend">
@@ -147,6 +155,7 @@ export function SearchFormSection({ onSearch, onTextFilter, hasFilters, onReset,
               onFocus={() => setFocusedField('location')}
               onBlur={() => setFocusedField(null)}
               className={focusedField === 'location' ? styles.inputFocused : ''}
+              defaultValue={initialFilters.location}
             >
               <option value="">All Locations</option>
               <optgroup label="Spain">
@@ -174,6 +183,7 @@ export function SearchFormSection({ onSearch, onTextFilter, hasFilters, onReset,
               onFocus={() => setFocusedField('experienceLevel')}
               onBlur={() => setFocusedField(null)}
               className={focusedField === 'experienceLevel' ? styles.inputFocused : ''}
+              defaultValue={initialFilters.experienceLevel}
             >
               <option value="">All Levels</option>
               <option value="junior">Junior</option>

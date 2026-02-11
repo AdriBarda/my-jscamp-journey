@@ -19,7 +19,6 @@ export const useSearchForm = ({
     if (event.target.name === idText) return
 
     const filters = {
-      search: formData.get(idText),
       technology: formData.get(idTechnology),
       location: formData.get(idLocation),
       experienceLevel: formData.get(idExperienceLevel)

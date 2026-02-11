@@ -1,20 +1,39 @@
 import { useEffect, useState } from 'react'
+import { useRouter } from './useRouter'
 
 export const useFilters = () => {
   const RESULTS_PER_PAGE = 4
-  const [filters, setFilters] = useState({
-    technology: '',
-    location: '',
-    experienceLevel: ''
+  const [filters, setFilters] = useState(() => {
+    const params = new URLSearchParams(window.location.search)
+    return {
+      technology: params.get('technology') || '',
+      location: params.get('type') || '',
+      experienceLevel: params.get('level') || ''
+    }
   })
-  const [textToFilter, setTextToFilter] = useState('')
-  const [currentPage, setCurrentPage] = useState(1)
+
+  const [textToFilter, setTextToFilter] = useState(() => {
+    const params = new URLSearchParams(window.location.search)
+    return params.get('text') || ''
+  })
+
+  const [currentPage, setCurrentPage] = useState(() => {
+    const params = new URLSearchParams(window.location.search)
+    const rawPage = params.get('page')
+    if (!rawPage) return 1
+    const page = Number(rawPage)
+    if (!Number.isFinite(page)) return 1
+    const normalized = Math.floor(page)
+    return normalized < 1 ? 1 : normalized
+  })
 
   const hasFilters = Object.values(filters).some((filter) => filter !== '')
 
   const [jobs, setjobs] = useState([])
   const [total, setTotal] = useState(0)
   const [loading, setLoading] = useState(true)
+
+  const { navigateTo } = useRouter()
 
   useEffect(() => {
     async function fetchJobs() {
@@ -46,7 +65,22 @@ export const useFilters = () => {
     }
 
     fetchJobs()
-  }, [filters, textToFilter, currentPage])
+  }, [filters, currentPage, textToFilter])
+
+  useEffect(() => {
+    const params = new URLSearchParams()
+    if (textToFilter) params.append('text', textToFilter)
+    if (filters.technology) params.append('technology', filters.technology)
+    if (filters.location) params.append('type', filters.location)
+    if (filters.experienceLevel) params.append('level', filters.experienceLevel)
+
+    if (currentPage > 1) params.append('page', currentPage)
+    const newUrl = params.toString()
+      ? `${window.location.pathname}?${params.toString()}`
+      : window.location.pathname
+
+    navigateTo(newUrl)
+  }, [filters, currentPage, textToFilter, navigateTo])
 
   const totalPages = Math.ceil(total / RESULTS_PER_PAGE)
 

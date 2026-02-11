@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { ContactFormSection } from '../components/ContactFormSection'
+import { PageTitle } from '../components/PageTitle'
 
 export function ContactPage() {
   const [questions, setQuestions] = useState([])
@@ -13,6 +14,7 @@ export function ContactPage() {
 
   return (
     <main>
+      <PageTitle title="MyDevJobs - Contact" />
       <ContactFormSection onSubmit={handleSubmit} />
     </main>
   )

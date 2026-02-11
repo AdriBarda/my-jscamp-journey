@@ -1,3 +1,4 @@
+import { PageTitle } from '../components/PageTitle'
 import { useRouter } from '../hooks/useRouter'
 
 export function HomePage() {
@@ -14,6 +15,7 @@ export function HomePage() {
   }
   return (
     <main>
+      <PageTitle title="MyDevJobs - Find Your Dream Job" />
       <section>
         <img
           src="./background.webp"

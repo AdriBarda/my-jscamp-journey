@@ -1,42 +1,8 @@
 import { useId, useState } from 'react'
 import styles from './SearchFormSection.module.css'
+import { useSearchForm } from '../hooks/useSearchForm'
 
-const useSearchForm = ({
-  idText,
-  idTechnology,
-  idLocation,
-  idExperienceLevel,
-  onSearch,
-  onTextFilter
-}) => {
-  const [searchText, setSearchText] = useState('')
-  const handleSubmit = (event) => {
-    event.preventDefault()
-
-    const formData = new FormData(event.currentTarget)
-    const filters = {
-      search: formData.get(idText),
-      technology: formData.get(idTechnology),
-      location: formData.get(idLocation),
-      experienceLevel: formData.get(idExperienceLevel)
-    }
-
-    onSearch(filters)
-  }
-
-  const handleTextChange = (event) => {
-    const text = event.target.value
-    onTextFilter(text)
-  }
-
-  return {
-    searchText,
-    handleSubmit,
-    handleTextChange
-  }
-}
-
-export function SearchFormSection({ onSearch, onTextFilter }) {
+export function SearchFormSection({ onSearch, onTextFilter, hasFilters, onReset, initialText }) {
   const idText = useId()
   const idTechnology = useId()
   const idLocation = useId()
@@ -52,6 +18,12 @@ export function SearchFormSection({ onSearch, onTextFilter }) {
     onSearch,
     onTextFilter
   })
+
+  const handleReset = () => {
+    // I'm taking this approach since I have a hybrid controled form for search and non formData for filters...
+    document.querySelector('.search-form').reset()
+    onReset()
+  }
 
   return (
     <section className="jobs-search">
@@ -84,11 +56,12 @@ export function SearchFormSection({ onSearch, onTextFilter }) {
             onFocus={() => setFocusedField('search')}
             onBlur={() => setFocusedField(null)}
             className={focusedField === 'search' ? styles.inputFocused : ''}
+            defaultValue={initialText}
           />
           <button type="submit">Search</button>
         </div>
 
-        <div>
+        <div className={styles.filtersBar}>
           <div className={styles.formGroup}>
             <label className={styles.inputHint} htmlFor={idTechnology}>
               Technology:
@@ -147,7 +120,7 @@ export function SearchFormSection({ onSearch, onTextFilter }) {
                 <option value="monterrey">Monterrey</option>
               </optgroup>
               <hr />
-              <option value="remote">🌍 Remote</option>
+              <option value="remoto">🌍 Remote</option>
             </select>
           </div>
 
@@ -172,6 +145,11 @@ export function SearchFormSection({ onSearch, onTextFilter }) {
               <option value="freelance">Freelance</option>
             </select>
           </div>
+          {hasFilters && (
+            <button type="button" className={styles.clearFiltersBtn} onClick={handleReset}>
+              Clear Filters
+            </button>
+          )}
         </div>
       </form>
     </section>

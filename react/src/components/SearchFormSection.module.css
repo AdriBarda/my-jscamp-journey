@@ -1,7 +1,3 @@
-.formGroup {
-  margin-top: 1.5rem;
-}
-
 .formGroup select {
   border: 2px solid var(--border);
   border-radius: 0.5rem;
@@ -28,7 +24,40 @@
 .inputHint {
   display: block;
   text-align: left;
-  margin-top: 0.25rem;
   font-size: 0.875rem;
   color: var(--text-muted);
+}
+
+.filtersBar {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  height: auto !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.clearFiltersBtn {
+  margin-left: auto;
+  align-self: flex-end;
+}
+
+@media (max-width: 640px) {
+  .filtersBar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .formGroup,
+  select {
+    width: 100%;
+  }
+
+  .clearFiltersBtn {
+    width: 100%;
+    margin-left: 0;
+    align-self: stretch;
+  }
 }

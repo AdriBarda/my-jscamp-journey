@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 export function JobCard({ job }) {
-  const { data, title, company, location, summary } = job
+  const { data, titulo, empresa, ubicacion, descripcion } = job
 
   const [isApplied, setIsApplied] = useState(false)
 
@@ -14,16 +14,16 @@ export function JobCard({ job }) {
   return (
     <article
       className="job-listing-card"
-      data-location={data?.locationCode}
-      data-experience={data?.experience}
+      data-location={data?.modalidad}
+      data-experience={data?.nivel}
       data-technology={data?.technology}
     >
       <div>
-        <h3>{title}</h3>
+        <h3>{titulo}</h3>
         <small>
-          {company} | {location}
+          {empresa} | {ubicacion}
         </small>
-        <p>{summary}</p>
+        <p>{descripcion}</p>
       </div>
       <button className={buttonClasses} disabled={isApplied} onClick={handleClick}>
         {buttonText}

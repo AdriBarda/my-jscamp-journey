@@ -35,11 +35,13 @@ export function SearchPage() {
       />
       <section className="job-results">
         <JobListings jobs={jobs} loading={loading} />
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={handlePageChange}
-        />
+        {jobs.length > 0 && (
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+          />
+        )}
       </section>
     </main>
   )

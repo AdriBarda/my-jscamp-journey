@@ -1,25 +1,21 @@
 import { useEffect, useState } from 'react'
-import { useRouter } from './useRouter'
+import { useSearchParams } from 'react-router'
 
 export const useFilters = () => {
   const RESULTS_PER_PAGE = 4
+  const [searchParams, setSearchParams] = useSearchParams()
   const [filters, setFilters] = useState(() => {
-    const params = new URLSearchParams(window.location.search)
     return {
-      technology: params.get('technology') || '',
-      location: params.get('type') || '',
-      experienceLevel: params.get('level') || ''
+      technology: searchParams.get('technology') || '',
+      location: searchParams.get('type') || '',
+      experienceLevel: searchParams.get('level') || ''
     }
   })
 
-  const [textToFilter, setTextToFilter] = useState(() => {
-    const params = new URLSearchParams(window.location.search)
-    return params.get('text') || ''
-  })
+  const [textToFilter, setTextToFilter] = useState(() => searchParams.get('text') || '')
 
   const [currentPage, setCurrentPage] = useState(() => {
-    const params = new URLSearchParams(window.location.search)
-    const rawPage = params.get('page')
+    const rawPage = searchParams.get('page')
     if (!rawPage) return 1
     const page = Number(rawPage)
     if (!Number.isFinite(page)) return 1
@@ -32,8 +28,6 @@ export const useFilters = () => {
   const [jobs, setjobs] = useState([])
   const [total, setTotal] = useState(0)
   const [loading, setLoading] = useState(true)
-
-  const { navigateTo } = useRouter()
 
   useEffect(() => {
     async function fetchJobs() {
@@ -68,19 +62,18 @@ export const useFilters = () => {
   }, [filters, currentPage, textToFilter])
 
   useEffect(() => {
-    const params = new URLSearchParams()
-    if (textToFilter) params.append('text', textToFilter)
-    if (filters.technology) params.append('technology', filters.technology)
-    if (filters.location) params.append('type', filters.location)
-    if (filters.experienceLevel) params.append('level', filters.experienceLevel)
+    setSearchParams(() => {
+      const nextParams = new URLSearchParams()
 
-    if (currentPage > 1) params.append('page', currentPage)
-    const newUrl = params.toString()
-      ? `${window.location.pathname}?${params.toString()}`
-      : window.location.pathname
+      if (textToFilter) nextParams.set('text', textToFilter)
+      if (filters.technology) nextParams.set('technology', filters.technology)
+      if (filters.location) nextParams.set('type', filters.location)
+      if (filters.experienceLevel) nextParams.set('level', filters.experienceLevel)
 
-    navigateTo(newUrl)
-  }, [filters, currentPage, textToFilter, navigateTo])
+      if (currentPage > 1) nextParams.set('page', String(currentPage))
+      return nextParams
+    })
+  }, [filters, currentPage, textToFilter, setSearchParams])
 
   const totalPages = Math.ceil(total / RESULTS_PER_PAGE)
 
@@ -107,6 +100,7 @@ export const useFilters = () => {
 
     setTextToFilter('')
     setCurrentPage(1)
+    setSearchParams(() => {})
   }
 
   return {

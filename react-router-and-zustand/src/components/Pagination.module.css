@@ -1,8 +1,10 @@
 .pagination {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 0.5rem;
-  margin-block: 2rem;
+  row-gap: 0.5rem;
+  margin-block: 1rem;
 
   a {
     display: flex;
@@ -25,6 +27,21 @@
       transform: scale(0.9);
     }
   }
+}
+
+.pageLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  padding: 0 0.75rem;
+  border-radius: 999px;
+  color: var(--text-muted);
+  background: var(--surface);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
 }
 
 .pagination a.isActive {

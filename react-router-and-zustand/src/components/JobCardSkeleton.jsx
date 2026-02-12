@@ -1,6 +1,8 @@
+import styles from './JobCard.module.css'
+
 export function JobCardSkeleton() {
   return (
-    <article className="job-listing-card is-skeleton">
+    <article className={`${styles.jobListingCard} ${styles.isSkeleton}`}>
       <div className="skeleton-block">
         <span className="skeleton-line skeleton-title" />
         <span className="skeleton-line skeleton-meta" />

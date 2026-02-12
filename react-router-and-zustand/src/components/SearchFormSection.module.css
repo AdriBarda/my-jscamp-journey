@@ -1,5 +1,5 @@
-.formGroup select {
-  border: 2px solid var(--border);
+.filtersBar select {
+  border: 1.5px solid var(--border);
   border-radius: 0.5rem;
   transition: border-color 0.2s ease;
   padding: 0.625rem 1.25rem;
@@ -50,8 +50,7 @@
     align-items: stretch;
   }
 
-  .formGroup,
-  select {
+  .filtersBar select {
     width: 100%;
   }
 

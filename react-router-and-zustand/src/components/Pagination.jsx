@@ -1,7 +1,5 @@
 import styles from './Pagination.module.css'
 export function Pagination({ currentPage = 1, totalPages = 10, onPageChange }) {
-  const pages = Array.from({ length: totalPages }, (_, index) => index + 1)
-
   const isFirstPage = currentPage === 1
   const isLastPage = currentPage === totalPages
 
@@ -22,23 +20,15 @@ export function Pagination({ currentPage = 1, totalPages = 10, onPageChange }) {
     }
   }
 
-  const handleChangePage = (event, page) => {
-    event.preventDefault()
-    if (page !== currentPage) {
-      onPageChange(page)
-    }
-  }
-
   const buildPageURL = (page) => {
     const url = new URL(window.location)
     url.searchParams.set('page', page)
     return `${url.pathname}?${url.searchParams.toString()}`
   }
   return (
-    <nav className={styles.pagination}>
+    <nav className={styles.pagination} aria-label="Pagination">
       <a href={buildPageURL(currentPage - 1)} className={stylePrevButton} onClick={handlePrevClick}>
         <svg
-          xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
           fill="none"
@@ -46,7 +36,6 @@ export function Pagination({ currentPage = 1, totalPages = 10, onPageChange }) {
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="1.5"
-          className="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left"
           viewBox="0 0 24 24"
         >
           <path fill="none" stroke="none" d="M0 0h24v24H0z" />
@@ -54,20 +43,12 @@ export function Pagination({ currentPage = 1, totalPages = 10, onPageChange }) {
         </svg>
       </a>
 
-      {pages.map((page) => (
-        <a
-          key={page}
-          href={buildPageURL(page)}
-          className={currentPage === page ? styles.isActive : ''}
-          onClick={(event) => handleChangePage(event, page)}
-        >
-          {page}
-        </a>
-      ))}
+      <span className={styles.pageLabel}>
+        Page {currentPage} of {totalPages}
+      </span>
 
       <a href={buildPageURL(currentPage + 1)} className={styleNextButton} onClick={handleNextClick}>
         <svg
-          xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
           fill="none"
@@ -75,7 +56,6 @@ export function Pagination({ currentPage = 1, totalPages = 10, onPageChange }) {
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="1.5"
-          className="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"
           viewBox="0 0 24 24"
         >
           <path fill="none" stroke="none" d="M0 0h24v24H0z" />

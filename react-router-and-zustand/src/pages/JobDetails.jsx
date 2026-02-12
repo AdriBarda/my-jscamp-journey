@@ -2,19 +2,21 @@ import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router'
 import { Link } from '../components/Link'
 import snarkdown from 'snarkdown'
-import styles from './Details.module.css'
+import styles from './JobDetails.module.css'
 
 function JobSection({ title, content }) {
   const html = snarkdown(content)
   return (
     <section className={styles.section}>
       <h2 className={styles.sectionTitle}>{title}</h2>
-      <div
-        className={`${styles.sectionContent} prose`}
-        dangerouslySetInnerHTML={{
-          __html: html
-        }}
-      />
+      <article className="prose">
+        <div
+          className={styles.sectionContent}
+          dangerouslySetInnerHTML={{
+            __html: html
+          }}
+        />
+      </article>
     </section>
   )
 }
@@ -24,7 +26,7 @@ export function JobDetails() {
   const navigate = useNavigate()
 
   const [job, setJob] = useState(null)
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
   const [isApplied, setIsApplied] = useState(false)
@@ -37,13 +39,16 @@ export function JobDetails() {
     fetch(`https://jscamp-api.vercel.app/api/jobs/${jobId}`)
       .then((response) => {
         setLoading(true)
-        if (!response.ok) throw new Error('Job Not Found')
+        if (!response.ok) {
+          navigate('/not-found')
+          throw new Error('Job Not Found')
+        }
         return response.json()
       })
       .then((json) => setJob(json))
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false))
-  }, [jobId])
+  }, [jobId, navigate])
 
   if (loading) {
     return (
@@ -86,7 +91,7 @@ export function JobDetails() {
           <h1 className={styles.title}>{job.titulo}</h1>
           <div className={styles.meta}>
             <p className={styles.company}>
-              {job.empresa} <span>|</span> {job.ubicacion}
+              {job.empresa} - {job.ubicacion}
             </p>
           </div>
         </div>

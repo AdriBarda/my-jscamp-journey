@@ -109,92 +109,79 @@ export function SearchFormSection({
         </div>
 
         <div className={styles.filtersBar}>
-          <div className={styles.formGroup}>
-            <label className={styles.inputHint} htmlFor={idTechnology}>
-              Technology:
-            </label>
-            <select
-              name={idTechnology}
-              id={idTechnology}
-              onFocus={() => setFocusedField('technology')}
-              onBlur={() => setFocusedField(null)}
-              className={focusedField === 'technology' ? styles.inputFocused : ''}
-              defaultValue={initialFilters.technology}
-            >
-              <option value="">All Technologies</option>
-              <optgroup label="Frontend">
-                <option value="html">HTML</option>
-                <option value="css">CSS</option>
-                <option value="javascript">JavaScript</option>
-                <option value="typescript">TypeScript</option>
-                <option value="react">React</option>
-                <option value="vue">Vue</option>
-              </optgroup>
+          <select
+            name={idTechnology}
+            id={idTechnology}
+            onFocus={() => setFocusedField('technology')}
+            onBlur={() => setFocusedField(null)}
+            className={focusedField === 'technology' ? styles.inputFocused : ''}
+            defaultValue={initialFilters.technology}
+          >
+            <option value="">All Technologies</option>
+            <optgroup label="Frontend">
+              <option value="html">HTML</option>
+              <option value="css">CSS</option>
+              <option value="javascript">JavaScript</option>
+              <option value="typescript">TypeScript</option>
+              <option value="react">React</option>
+              <option value="vue">Vue</option>
+            </optgroup>
 
-              <optgroup label="Backend">
-                <option value="node">Node.js</option>
-                <option value="python">Python</option>
-                <option value="php">PHP</option>
-                <option value="java">Java</option>
-              </optgroup>
+            <optgroup label="Backend">
+              <option value="node">Node.js</option>
+              <option value="python">Python</option>
+              <option value="php">PHP</option>
+              <option value="java">Java</option>
+            </optgroup>
 
-              <optgroup label="DB">
-                <option value="mysql">MySQL</option>
-                <option value="mongodb">MongoDB</option>
-                <option value="postgresql">PostgreSQL</option>
-              </optgroup>
-            </select>
-          </div>
-          <div className={styles.formGroup}>
-            <label className={styles.inputHint} htmlFor={idLocation}>
-              Location:
-            </label>
-            <select
-              name={idLocation}
-              id={idLocation}
-              onFocus={() => setFocusedField('location')}
-              onBlur={() => setFocusedField(null)}
-              className={focusedField === 'location' ? styles.inputFocused : ''}
-              defaultValue={initialFilters.location}
-            >
-              <option value="">All Locations</option>
-              <optgroup label="Spain">
-                <option value="barcelona">Barcelona</option>
-                <option value="madrid">Madrid</option>
-                <option value="valencia">Valencia</option>
-              </optgroup>
-              <optgroup label="Mexico">
-                <option value="cdmx">Mexico City</option>
-                <option value="guadalajara">Guadalajara</option>
-                <option value="monterrey">Monterrey</option>
-              </optgroup>
-              <hr />
-              <option value="remoto">🌍 Remote</option>
-            </select>
-          </div>
+            <optgroup label="DB">
+              <option value="mysql">MySQL</option>
+              <option value="mongodb">MongoDB</option>
+              <option value="postgresql">PostgreSQL</option>
+            </optgroup>
+          </select>
 
-          <div className={styles.formGroup}>
-            <label className={styles.inputHint} htmlFor={idExperienceLevel}>
-              Experience Level:
-            </label>
-            <select
-              name={idExperienceLevel}
-              id={idExperienceLevel}
-              onFocus={() => setFocusedField('experienceLevel')}
-              onBlur={() => setFocusedField(null)}
-              className={focusedField === 'experienceLevel' ? styles.inputFocused : ''}
-              defaultValue={initialFilters.experienceLevel}
-            >
-              <option value="">All Levels</option>
-              <option value="junior">Junior</option>
-              <option value="mid">Mid-level</option>
-              <option value="senior">Senior</option>
-              <option value="lead">Lead</option>
-              <hr />
-              <option value="internship">Internship</option>
-              <option value="freelance">Freelance</option>
-            </select>
-          </div>
+          <select
+            name={idLocation}
+            id={idLocation}
+            onFocus={() => setFocusedField('location')}
+            onBlur={() => setFocusedField(null)}
+            className={focusedField === 'location' ? styles.inputFocused : ''}
+            defaultValue={initialFilters.location}
+          >
+            <option value="">All Locations</option>
+            <optgroup label="Spain">
+              <option value="barcelona">Barcelona</option>
+              <option value="madrid">Madrid</option>
+              <option value="valencia">Valencia</option>
+            </optgroup>
+            <optgroup label="Mexico">
+              <option value="cdmx">Mexico City</option>
+              <option value="guadalajara">Guadalajara</option>
+              <option value="monterrey">Monterrey</option>
+            </optgroup>
+            <hr />
+            <option value="remoto">🌍 Remote</option>
+          </select>
+
+          <select
+            name={idExperienceLevel}
+            id={idExperienceLevel}
+            onFocus={() => setFocusedField('experienceLevel')}
+            onBlur={() => setFocusedField(null)}
+            className={focusedField === 'experienceLevel' ? styles.inputFocused : ''}
+            defaultValue={initialFilters.experienceLevel}
+          >
+            <option value="">All Levels</option>
+            <option value="junior">Junior</option>
+            <option value="mid">Mid-level</option>
+            <option value="senior">Senior</option>
+            <option value="lead">Lead</option>
+            <hr />
+            <option value="internship">Internship</option>
+            <option value="freelance">Freelance</option>
+          </select>
+
           {hasFilters && (
             <button type="button" className={styles.clearFiltersBtn} onClick={handleReset}>
               Clear Filters

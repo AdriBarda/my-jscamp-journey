@@ -12,8 +12,12 @@ export function Link({ href, children, ...otherProps }) {
     }
   }
 
+  const combinedClassName = [otherProps.className, isCurrentPath() ? styles.isActive : '']
+    .filter(Boolean)
+    .join(' ')
+
   return (
-    <NavLink to={href} {...otherProps} className={isCurrentPath() ? styles.isActive : ''}>
+    <NavLink to={href} {...otherProps} className={combinedClassName}>
       {children}
     </NavLink>
   )

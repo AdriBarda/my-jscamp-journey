@@ -62,16 +62,42 @@
   {
     "eyebrow": "Stage 03",
     "title": "React App (Vite)",
-    "meta": "Main React implementation with a Vite dev server.",
+    "meta": "Foundation stage for learning React fundamentals.",
     "paragraphs": [
-      "This is the primary React version of the project. It uses Vite for fast local development and a production build."
+      "This is the foundation of the project. It is meant to explore React core concepts and create our own routing in order to understand how fundamentals like routing and state management work without making use of any library yet (react-router / zustand)."
     ],
     "listTitle": "Includes",
-    "listItems": ["Component-based UI", "Vite dev server (HMR)", "Production build output"],
+    "listItems": [
+      "Component-based UI",
+      "Basic react hooks + custom hooks usage",
+      "Vite dev server (HMR)",
+      "Production build output"
+    ],
     "links": [
       {
         "href": "readme.html",
         "label": "Open React README",
+        "icon": "▶"
+      }
+    ]
+  },
+  {
+    "eyebrow": "Stage 04",
+    "title": "React Router + Zustand",
+    "meta": "Routing-first iteration with shared state patterns.",
+    "paragraphs": [
+      "This stage expands the React app with client-side routing and a global store. It is focused on multi-view navigation, route-aware layouts, and shared UI state across pages."
+    ],
+    "listTitle": "Focus",
+    "listItems": [
+      "React Router for navigation and nested routes",
+      "Zustand store for shared state (to be wired up)",
+      "Scaling the app shell beyond a single view"
+    ],
+    "links": [
+      {
+        "href": "readme-router-zustand.html",
+        "label": "Open Router + Zustand README",
         "icon": "▶"
       }
     ]

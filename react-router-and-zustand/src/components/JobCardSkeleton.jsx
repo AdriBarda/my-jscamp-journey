@@ -9,7 +9,10 @@ export function JobCardSkeleton() {
         <span className="skeleton-line skeleton-text" />
         <span className="skeleton-line skeleton-text short" />
       </div>
-      <span className="skeleton-button" />
+      <div className={styles.actions}>
+        <span className="skeleton-line skeleton-text short" style={{ width: '50px' }} />
+        <span className="skeleton-button" />
+      </div>
     </article>
   )
 }

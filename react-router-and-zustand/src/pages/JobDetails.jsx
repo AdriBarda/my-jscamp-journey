@@ -78,7 +78,7 @@ export function JobDetails() {
     <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 1rem' }}>
       <div className={styles.container}>
         <nav className={styles.breadcrumb}>
-          <Link href="/" className={styles.breadcrumbLink}>
+          <Link href="/search" className={styles.breadcrumbLink}>
             Jobs
           </Link>
           <span className={styles.breadcrumbSeparator}>/</span>

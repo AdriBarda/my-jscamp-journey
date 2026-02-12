@@ -55,12 +55,16 @@
   pointer-events: none;
 }
 
-.isSkeleton > div {
+.isSkeleton > div:first-child {
   flex: 1;
 }
 
 @media (max-width: 640px) {
   .jobListingCard {
     flex-direction: column;
+  }
+
+  .isSkeleton {
+    align-items: start;
   }
 }

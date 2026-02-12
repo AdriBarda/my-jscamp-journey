@@ -227,8 +227,9 @@ button {
   &:hover,
   &:focus {
     background-color: var(--primary-600);
-    outline: 2px solid white;
-    outline-offset: 2px;
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 0.5px;
+    color: white !important;
   }
   &.active {
     background-color: var(--primary-500);

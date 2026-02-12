@@ -1,3 +1,5 @@
+import { PageTitle } from '../components/PageTitle'
+
 export function NotFoundPage() {
   return (
     <main>

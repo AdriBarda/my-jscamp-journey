@@ -50,6 +50,8 @@
   color: var(--on-primary);
   padding: 0.25rem 0.5rem;
   border-radius: 0.5rem;
+  pointer-events: none;
+  user-select: none;
 
   &:hover,
   &:focus {

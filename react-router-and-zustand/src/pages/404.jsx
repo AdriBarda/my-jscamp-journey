@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router'
 import { PageTitle } from '../components/PageTitle'
 import styles from './404.module.css'
 
-export function NotFoundPage() {
+export default function NotFoundPage() {
   const navigate = useNavigate()
   return (
     <main>

@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router'
 import { Link } from '../components/Link'
 import snarkdown from 'snarkdown'
 import styles from './JobDetails.module.css'
+import { FallbackLoadingComponent } from '../components/FallbackLoadingComponent'
 
 function JobSection({ title, content }) {
   const html = snarkdown(content)
@@ -21,7 +22,7 @@ function JobSection({ title, content }) {
   )
 }
 
-export function JobDetails() {
+export default function JobDetails() {
   const { jobId } = useParams()
   const navigate = useNavigate()
 
@@ -51,13 +52,7 @@ export function JobDetails() {
   }, [jobId, navigate])
 
   if (loading) {
-    return (
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 1rem' }}>
-        <div className={styles.loading}>
-          <p className={styles.loadingText}>Loading...</p>
-        </div>
-      </div>
-    )
+    return <FallbackLoadingComponent />
   }
 
   if (error || !job) {

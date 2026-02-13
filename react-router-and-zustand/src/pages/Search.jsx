@@ -4,7 +4,7 @@ import { SearchFormSection } from '../components/SearchFormSection.jsx'
 import { useFilters } from '../hooks/useFilters.jsx'
 import { PageTitle } from '../components/PageTitle.jsx'
 
-export function SearchPage() {
+export default function SearchPage() {
   const {
     jobs,
     total,

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { ContactFormSection } from '../components/ContactFormSection'
 import { PageTitle } from '../components/PageTitle'
 
-export function ContactPage() {
+export default function ContactPage() {
   const [questions, setQuestions] = useState([])
   const handleSubmit = (question) => {
     setQuestions((prevQuestions) => [...prevQuestions, question])

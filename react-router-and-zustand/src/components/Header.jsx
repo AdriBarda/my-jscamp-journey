@@ -1,10 +1,10 @@
-import { Link } from './Link'
+import { NavLink } from 'react-router'
 import styles from './Header.module.css'
 
 export function Header() {
   return (
     <header className={styles.header}>
-      <Link href="/" className={styles.brand}>
+      <NavLink to="/" className={styles.brand}>
         <h1 className={styles.title}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -24,10 +24,14 @@ export function Header() {
           </svg>
           MyDevJobs
         </h1>
-      </Link>
+      </NavLink>
       <nav className={styles.nav}>
-        <Link href="/search">Job Offers</Link>
-        <Link href="/contact">Contact</Link>
+        <NavLink className={({ isActive }) => (isActive ? styles.linkIsActive : '')} to="/search">
+          Job Offers
+        </NavLink>
+        <NavLink className={({ isActive }) => (isActive ? styles.linkIsActive : '')} to="/contact">
+          Contact
+        </NavLink>
       </nav>
       <div className={styles.actions}>
         <devjobs-avatar></devjobs-avatar>

@@ -45,6 +45,18 @@
   justify-content: flex-end;
 }
 
+.linkIsActive {
+  background: var(--primary);
+  color: var(--on-primary);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+
+  &:hover,
+  &:focus {
+    color: var(--on-primary);
+  }
+}
+
 @media (max-width: 640px) {
   .title {
     font-size: 2rem;

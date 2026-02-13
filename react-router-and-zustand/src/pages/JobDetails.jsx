@@ -70,7 +70,7 @@ export default function JobDetails() {
   }
 
   return (
-    <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 1rem' }}>
+    <div style={{ maxWidth: '1280px', width: '100%', margin: '0 auto', padding: '0 1rem' }}>
       <div className={styles.container}>
         <nav className={styles.breadcrumb}>
           <Link href="/search" className={styles.breadcrumbLink}>
@@ -90,10 +90,10 @@ export default function JobDetails() {
             </p>
           </div>
         </div>
-        <button className={styles.applyButton} disabled={isApplied} onClick={handleApply}>
-          {isApplied ? 'Applied!' : 'Apply'}
-        </button>
       </header>
+      <button className={styles.applyButton} disabled={isApplied} onClick={handleApply}>
+        {isApplied ? 'Applied!' : 'Apply'}
+      </button>
       <JobSection title="Job description" content={job.content.description} />
       <JobSection title="Responsibilities" content={job.content.responsibilities} />
       <JobSection title="Job Requirements" content={job.content.requirements} />

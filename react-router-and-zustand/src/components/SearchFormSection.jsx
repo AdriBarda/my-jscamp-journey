@@ -1,14 +1,13 @@
-import { useId, useRef, useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import styles from './SearchFormSection.module.css'
-import { useSearchForm } from '../hooks/useSearchForm'
 
 export function SearchFormSection({
-  onSearch,
   onTextFilter,
   hasFilters,
   onReset,
   initialText,
-  initialFilters
+  filters,
+  onFilterChange
 }) {
   const idText = useId()
   const idTechnology = useId()
@@ -17,43 +16,52 @@ export function SearchFormSection({
 
   const [focusedField, setFocusedField] = useState(null)
 
-  const formRef = useRef()
   const searchBarRef = useRef()
 
-  const { handleSubmit, handleTextChange } = useSearchForm({
-    idText,
-    idTechnology,
-    idLocation,
-    idExperienceLevel,
-    onSearch,
-    onTextFilter
-  })
+  const [searchText, setSearchText] = useState(() => initialText || '')
+  const timeoutId = useRef(null)
 
-  const handleReset = () => {
-    // I'm taking this approach since I have a hybrid controled form for search and non formData for filters...
-    // Updated this to useRef() usage since it was not necesary to use document.getSelector...
-    formRef.current.reset()
-    onReset()
+  const handleTextChange = (event) => {
+    event.preventDefault()
+    const text = event.target.value
+    setSearchText(text)
+
+    if (timeoutId.current) {
+      clearTimeout(timeoutId.current)
+    }
+
+    timeoutId.current = setTimeout(() => {
+      onTextFilter(text)
+    }, 500)
   }
 
   const handleClearSearch = () => {
-    searchBarRef.current.value = ''
+    setSearchText('')
     onTextFilter('')
     searchBarRef.current.focus()
   }
+
+  const handleClearFilters = () => {
+    setSearchText('')
+    onReset()
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+  }
+
+  useEffect(() => {
+    return () => {
+      if (timeoutId.current) clearTimeout(timeoutId.current)
+    }
+  }, [])
 
   return (
     <section className="jobs-search">
       <h1>Find the next step in your career</h1>
       <p>Explore thousands of opportunities in the IT industry.</p>
 
-      <form
-        ref={formRef}
-        className="search-form"
-        onChange={handleSubmit}
-        id="job-search-form"
-        role="search"
-      >
+      <form onSubmit={handleSubmit} className="search-form" id="job-search-form" role="search">
         <div className="search-bar">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -71,16 +79,16 @@ export function SearchFormSection({
             <path d="M3 10a7 7 0 1 0 14 0 7 7 0 1 0-14 0m18 11-6-6" />
           </svg>
           <input
+            value={searchText}
             ref={searchBarRef}
             id={idText}
             name={idText}
             type="text"
             placeholder="Search a job by title, skill or company"
-            onChange={handleTextChange}
+            onChange={(event) => handleTextChange(event)}
             onFocus={() => setFocusedField('search')}
             onBlur={() => setFocusedField(null)}
             className={focusedField === 'search' ? styles.inputFocused : ''}
-            defaultValue={initialText}
           />
           <button
             type="button"
@@ -110,12 +118,13 @@ export function SearchFormSection({
 
         <div className={styles.filtersBar}>
           <select
+            value={filters.technology}
             name={idTechnology}
             id={idTechnology}
             onFocus={() => setFocusedField('technology')}
             onBlur={() => setFocusedField(null)}
+            onChange={(event) => onFilterChange('technology', event.target.value)}
             className={focusedField === 'technology' ? styles.inputFocused : ''}
-            defaultValue={initialFilters.technology}
           >
             <option value="">All Technologies</option>
             <optgroup label="Frontend">
@@ -142,12 +151,13 @@ export function SearchFormSection({
           </select>
 
           <select
+            value={filters.location}
             name={idLocation}
             id={idLocation}
             onFocus={() => setFocusedField('location')}
             onBlur={() => setFocusedField(null)}
+            onChange={(event) => onFilterChange('location', event.target.value)}
             className={focusedField === 'location' ? styles.inputFocused : ''}
-            defaultValue={initialFilters.location}
           >
             <option value="">All Locations</option>
             <optgroup label="Spain">
@@ -165,12 +175,13 @@ export function SearchFormSection({
           </select>
 
           <select
+            value={filters.experienceLevel}
             name={idExperienceLevel}
             id={idExperienceLevel}
             onFocus={() => setFocusedField('experienceLevel')}
             onBlur={() => setFocusedField(null)}
+            onChange={(event) => onFilterChange('experienceLevel', event.target.value)}
             className={focusedField === 'experienceLevel' ? styles.inputFocused : ''}
-            defaultValue={initialFilters.experienceLevel}
           >
             <option value="">All Levels</option>
             <option value="junior">Junior</option>
@@ -183,7 +194,7 @@ export function SearchFormSection({
           </select>
 
           {hasFilters && (
-            <button type="button" className={styles.clearFiltersBtn} onClick={handleReset}>
+            <button type="button" className={styles.clearFiltersBtn} onClick={handleClearFilters}>
               Clear Filters
             </button>
           )}

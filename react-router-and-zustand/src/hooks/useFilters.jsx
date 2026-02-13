@@ -3,7 +3,11 @@ import { useSearchParams } from 'react-router'
 
 export const useFilters = () => {
   const RESULTS_PER_PAGE = 4
+
   const [searchParams, setSearchParams] = useSearchParams()
+
+  const [textToFilter, setTextToFilter] = useState(() => searchParams.get('text') || '')
+
   const [filters, setFilters] = useState(() => {
     return {
       technology: searchParams.get('technology') || '',
@@ -11,8 +15,6 @@ export const useFilters = () => {
       experienceLevel: searchParams.get('level') || ''
     }
   })
-
-  const [textToFilter, setTextToFilter] = useState(() => searchParams.get('text') || '')
 
   const [currentPage, setCurrentPage] = useState(() => {
     const rawPage = searchParams.get('page')
@@ -81,13 +83,13 @@ export const useFilters = () => {
     setCurrentPage(page)
   }
 
-  const handleSearch = (filters) => {
-    setFilters(filters)
+  const handleTextFilter = (newTextToFilter) => {
+    setTextToFilter(newTextToFilter)
     setCurrentPage(1)
   }
 
-  const handleTextFilter = (newTextToFilter) => {
-    setTextToFilter(newTextToFilter)
+  const handleUpdateFilters = (name, value) => {
+    setFilters((prevFilters) => ({ ...prevFilters, [name]: value }))
     setCurrentPage(1)
   }
 
@@ -113,8 +115,8 @@ export const useFilters = () => {
     textToFilter,
     filters,
     handlePageChange,
-    handleSearch,
     handleTextFilter,
+    handleUpdateFilters,
     handleClearFilters
   }
 }

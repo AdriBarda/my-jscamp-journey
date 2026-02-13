@@ -15,8 +15,8 @@ export default function SearchPage() {
     textToFilter,
     filters,
     handlePageChange,
-    handleSearch,
     handleTextFilter,
+    handleUpdateFilters,
     handleClearFilters
   } = useFilters()
 
@@ -26,12 +26,12 @@ export default function SearchPage() {
     <main>
       <PageTitle title={title} />
       <SearchFormSection
-        onSearch={handleSearch}
         onTextFilter={handleTextFilter}
         hasFilters={hasFilters}
         onReset={handleClearFilters}
         initialText={textToFilter}
-        initialFilters={filters}
+        filters={filters}
+        onFilterChange={handleUpdateFilters}
       />
       <section className="job-results">
         <JobListings jobs={jobs} loading={loading} />

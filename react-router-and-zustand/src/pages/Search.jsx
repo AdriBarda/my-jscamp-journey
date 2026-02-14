@@ -29,7 +29,7 @@ export default function SearchPage() {
         onTextFilter={handleTextFilter}
         hasFilters={hasFilters}
         onReset={handleClearFilters}
-        initialText={textToFilter}
+        textFilter={textToFilter}
         filters={filters}
         onFilterChange={handleUpdateFilters}
       />

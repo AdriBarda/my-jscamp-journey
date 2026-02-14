@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router'
+import { useDebounce } from './useDebounce'
 
 export const useFilters = () => {
   const RESULTS_PER_PAGE = 4
@@ -7,6 +8,7 @@ export const useFilters = () => {
   const [searchParams, setSearchParams] = useSearchParams()
 
   const [textToFilter, setTextToFilter] = useState(() => searchParams.get('text') || '')
+  const debouncedTextToFilter = useDebounce(textToFilter, 500)
 
   const [filters, setFilters] = useState(() => {
     return {
@@ -37,7 +39,7 @@ export const useFilters = () => {
         setLoading(true)
 
         const params = new URLSearchParams()
-        if (textToFilter) params.append('text', textToFilter)
+        if (debouncedTextToFilter) params.append('text', debouncedTextToFilter)
         if (filters.technology) params.append('technology', filters.technology)
         if (filters.location) params.append('type', filters.location)
         if (filters.experienceLevel) params.append('level', filters.experienceLevel)
@@ -61,7 +63,7 @@ export const useFilters = () => {
     }
 
     fetchJobs()
-  }, [filters, currentPage, textToFilter])
+  }, [filters, currentPage, debouncedTextToFilter])
 
   useEffect(() => {
     setSearchParams(() => {

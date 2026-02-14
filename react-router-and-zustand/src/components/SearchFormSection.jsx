@@ -1,11 +1,12 @@
-import { useEffect, useId, useRef, useState } from 'react'
+import { useId, useRef, useState } from 'react'
 import styles from './SearchFormSection.module.css'
+import { FilterField } from './FilterField'
 
 export function SearchFormSection({
   onTextFilter,
   hasFilters,
   onReset,
-  initialText,
+  textFilter,
   filters,
   onFilterChange
 }) {
@@ -18,43 +19,18 @@ export function SearchFormSection({
 
   const searchBarRef = useRef()
 
-  const [searchText, setSearchText] = useState(() => initialText || '')
-  const timeoutId = useRef(null)
-
-  const handleTextChange = (event) => {
-    event.preventDefault()
-    const text = event.target.value
-    setSearchText(text)
-
-    if (timeoutId.current) {
-      clearTimeout(timeoutId.current)
-    }
-
-    timeoutId.current = setTimeout(() => {
-      onTextFilter(text)
-    }, 500)
-  }
-
   const handleClearSearch = () => {
-    setSearchText('')
     onTextFilter('')
     searchBarRef.current.focus()
   }
 
   const handleClearFilters = () => {
-    setSearchText('')
     onReset()
   }
 
   const handleSubmit = (event) => {
     event.preventDefault()
   }
-
-  useEffect(() => {
-    return () => {
-      if (timeoutId.current) clearTimeout(timeoutId.current)
-    }
-  }, [])
 
   return (
     <section className="jobs-search">
@@ -78,18 +54,20 @@ export function SearchFormSection({
             <path fill="none" stroke="none" d="M0 0h24v24H0z" />
             <path d="M3 10a7 7 0 1 0 14 0 7 7 0 1 0-14 0m18 11-6-6" />
           </svg>
-          <input
-            value={searchText}
-            ref={searchBarRef}
-            id={idText}
-            name={idText}
-            type="text"
-            placeholder="Search a job by title, skill or company"
-            onChange={(event) => handleTextChange(event)}
-            onFocus={() => setFocusedField('search')}
-            onBlur={() => setFocusedField(null)}
-            className={focusedField === 'search' ? styles.inputFocused : ''}
-          />
+          <FilterField>
+            <input
+              id={idText}
+              type="text"
+              value={textFilter}
+              ref={searchBarRef}
+              name={idText}
+              placeholder="Search a job by title, skill or company"
+              onChange={(event) => onTextFilter(event.target.value)}
+              onFocus={() => setFocusedField('search')}
+              onBlur={() => setFocusedField(null)}
+              className={focusedField === 'search' ? styles.inputFocused : ''}
+            />
+          </FilterField>
           <button
             type="button"
             style={{

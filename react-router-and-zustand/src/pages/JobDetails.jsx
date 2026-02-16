@@ -5,7 +5,7 @@ import snarkdown from 'snarkdown'
 import styles from './JobDetails.module.css'
 import { FallbackLoadingComponent } from '../components/FallbackLoadingComponent'
 
-import { useAuth } from '../hooks/useAuth'
+import { useAuthStore } from '../store/auth'
 
 function JobSection({ title, content }) {
   const html = snarkdown(content)
@@ -29,7 +29,7 @@ function JobDetailsButton() {
     setIsApplied(true)
   }
 
-  const { isLoggedIn } = useAuth()
+  const { isLoggedIn } = useAuthStore()
   const [isApplied, setIsApplied] = useState(false)
 
   const buttonStyles = [styles.applyButton, isApplied ? styles.isApplied : '']

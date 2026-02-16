@@ -1,9 +1,9 @@
 import { NavLink } from 'react-router'
 import styles from './Header.module.css'
-import { useAuth } from '../hooks/useAuth'
+import { useAuthStore } from '../store/auth'
 
 function SigninButton() {
-  const { isLoggedIn, signIn, signOut } = useAuth()
+  const { isLoggedIn, signIn, signOut } = useAuthStore()
   return isLoggedIn ? (
     <button onClick={signOut}>Sign Out</button>
   ) : (

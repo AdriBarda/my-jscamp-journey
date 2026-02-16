@@ -106,13 +106,19 @@
 }
 
 .applyButton:disabled {
-  background: #4caf50;
+  background: var(--primary);
   cursor: not-allowed;
   opacity: 0.6;
 }
 
 .applyButton:disabled:hover {
   background: var(--primary-700);
+}
+
+.isApplied {
+  background: #4caf50 !important;
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
 @media (max-width: 1023px) {

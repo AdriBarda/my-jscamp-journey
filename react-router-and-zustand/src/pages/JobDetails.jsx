@@ -5,6 +5,8 @@ import snarkdown from 'snarkdown'
 import styles from './JobDetails.module.css'
 import { FallbackLoadingComponent } from '../components/FallbackLoadingComponent'
 
+import { useAuth } from '../hooks/useAuth'
+
 function JobSection({ title, content }) {
   const html = snarkdown(content)
   return (
@@ -22,6 +24,25 @@ function JobSection({ title, content }) {
   )
 }
 
+function JobDetailsButton() {
+  const handleApply = () => {
+    setIsApplied(true)
+  }
+
+  const { isLoggedIn } = useAuth()
+  const [isApplied, setIsApplied] = useState(false)
+
+  const buttonStyles = [styles.applyButton, isApplied ? styles.isApplied : '']
+    .filter(Boolean)
+    .join(' ')
+
+  return (
+    <button className={buttonStyles} disabled={!isLoggedIn || isApplied} onClick={handleApply}>
+      {isLoggedIn ? (isApplied ? 'Applied!' : 'Apply') : 'Log in to apply'}
+    </button>
+  )
+}
+
 export default function JobDetails() {
   const { jobId } = useParams()
   const navigate = useNavigate()
@@ -29,12 +50,6 @@ export default function JobDetails() {
   const [job, setJob] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-
-  const [isApplied, setIsApplied] = useState(false)
-
-  const handleApply = () => {
-    setIsApplied(true)
-  }
 
   useEffect(() => {
     fetch(`https://jscamp-api.vercel.app/api/jobs/${jobId}`)
@@ -91,9 +106,7 @@ export default function JobDetails() {
           </div>
         </div>
       </header>
-      <button className={styles.applyButton} disabled={isApplied} onClick={handleApply}>
-        {isApplied ? 'Applied!' : 'Apply'}
-      </button>
+      <JobDetailsButton />
       <JobSection title="Job description" content={job.content.description} />
       <JobSection title="Responsibilities" content={job.content.responsibilities} />
       <JobSection title="Job Requirements" content={job.content.requirements} />

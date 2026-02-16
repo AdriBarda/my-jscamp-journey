@@ -1,5 +1,15 @@
 import { NavLink } from 'react-router'
 import styles from './Header.module.css'
+import { useAuth } from '../hooks/useAuth'
+
+function SigninButton() {
+  const { isLoggedIn, signIn, signOut } = useAuth()
+  return isLoggedIn ? (
+    <button onClick={signOut}>Sign Out</button>
+  ) : (
+    <button onClick={signIn}> Sign In</button>
+  )
+}
 
 export function Header() {
   return (
@@ -34,7 +44,7 @@ export function Header() {
         </NavLink>
       </nav>
       <div className={styles.actions}>
-        <devjobs-avatar></devjobs-avatar>
+        <SigninButton />
       </div>
     </header>
   )

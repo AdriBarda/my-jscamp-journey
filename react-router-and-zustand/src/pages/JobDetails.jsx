@@ -5,7 +5,8 @@ import snarkdown from 'snarkdown'
 import styles from './JobDetails.module.css'
 import { FallbackLoadingComponent } from '../components/FallbackLoadingComponent'
 
-import { useAuthStore } from '../store/auth'
+import { AddToFavoritesButton } from '../components/Buttons/AddToFavoritesButton.jsx'
+import { ApplyButton } from '../components/Buttons/ApplyButton.jsx'
 
 function JobSection({ title, content }) {
   const html = snarkdown(content)
@@ -21,25 +22,6 @@ function JobSection({ title, content }) {
         />
       </article>
     </section>
-  )
-}
-
-function JobDetailsButton() {
-  const handleApply = () => {
-    setIsApplied(true)
-  }
-
-  const { isLoggedIn } = useAuthStore()
-  const [isApplied, setIsApplied] = useState(false)
-
-  const buttonStyles = [styles.applyButton, isApplied ? styles.isApplied : '']
-    .filter(Boolean)
-    .join(' ')
-
-  return (
-    <button className={buttonStyles} disabled={!isLoggedIn || isApplied} onClick={handleApply}>
-      {isLoggedIn ? (isApplied ? 'Applied!' : 'Apply') : 'Log in to apply'}
-    </button>
   )
 }
 
@@ -106,7 +88,10 @@ export default function JobDetails() {
           </div>
         </div>
       </header>
-      <JobDetailsButton />
+      <div className={styles.actions} style={{ marginBlock: '3rem' }}>
+        <ApplyButton jobId={job.id} />
+        <AddToFavoritesButton jobId={job.id} />
+      </div>
       <JobSection title="Job description" content={job.content.description} />
       <JobSection title="Responsibilities" content={job.content.responsibilities} />
       <JobSection title="Job Requirements" content={job.content.requirements} />

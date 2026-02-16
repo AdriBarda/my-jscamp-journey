@@ -1,18 +1,11 @@
-import { useState } from 'react'
 import { Link } from './Link'
 import styles from './JobCard.module.css'
+import { AddToFavoritesButton } from './Buttons/AddToFavoritesButton.jsx'
+import { ApplyButton } from './Buttons/ApplyButton.jsx'
 
 export function JobCard({ job }) {
   const { id, data, titulo, empresa, ubicacion, descripcion } = job
 
-  const [isApplied, setIsApplied] = useState(false)
-
-  function handleClick() {
-    setIsApplied(true)
-  }
-
-  const buttonClasses = isApplied ? 'btn-apply-job is-applied' : 'btn-apply-job'
-  const buttonText = isApplied ? 'Applied!' : 'Apply'
   return (
     <article
       className={styles.jobListingCard}
@@ -35,9 +28,8 @@ export function JobCard({ job }) {
         <Link href={`/jobs/${id}`} className={styles.details}>
           Details
         </Link>
-        <button className={buttonClasses} disabled={isApplied} onClick={handleClick}>
-          {buttonText}
-        </button>
+        <ApplyButton jobId={job.id} />
+        <AddToFavoritesButton jobId={job.id} />
       </div>
     </article>
   )

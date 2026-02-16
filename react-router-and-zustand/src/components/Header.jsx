@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router'
 import styles from './Header.module.css'
 import { useAuthStore } from '../store/auth'
+import { useFavoriteStore } from '../store/favoritesStore'
 
 function SigninButton() {
   const { isLoggedIn, signIn, signOut } = useAuthStore()
@@ -12,6 +13,10 @@ function SigninButton() {
 }
 
 export function Header() {
+  const { isLoggedIn } = useAuthStore()
+  const { countFavorites } = useFavoriteStore()
+
+  const favoritesNumber = countFavorites()
   return (
     <header className={styles.header}>
       <NavLink to="/" className={styles.brand}>
@@ -39,6 +44,14 @@ export function Header() {
         <NavLink className={({ isActive }) => (isActive ? styles.linkIsActive : '')} to="/search">
           Job Offers
         </NavLink>
+        {isLoggedIn && (
+          <NavLink
+            className={({ isActive }) => (isActive ? styles.linkIsActive : '')}
+            to="/profile"
+          >
+            Profile ❤️{favoritesNumber}
+          </NavLink>
+        )}
         <NavLink className={({ isActive }) => (isActive ? styles.linkIsActive : '')} to="/contact">
           Contact
         </NavLink>

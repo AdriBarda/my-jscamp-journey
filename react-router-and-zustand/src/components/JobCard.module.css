@@ -9,6 +9,7 @@
   gap: 0.5rem;
   text-align: center;
 }
+
 .details {
   color: var(--primary);
   background: none;
@@ -66,5 +67,12 @@
 
   .isSkeleton {
     align-items: start;
+  }
+
+  .actions {
+    margin-top: 2rem;
+    align-self: end;
+    flex-direction: row;
+    align-items: center;
   }
 }

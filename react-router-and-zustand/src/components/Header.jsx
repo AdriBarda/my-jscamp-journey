@@ -1,15 +1,18 @@
-import { NavLink } from 'react-router'
+import { NavLink, useNavigate } from 'react-router'
 import styles from './Header.module.css'
 import { useAuthStore } from '../store/auth'
 import { useFavoriteStore } from '../store/favoritesStore'
 
 function SigninButton() {
-  const { isLoggedIn, signIn, signOut } = useAuthStore()
-  return isLoggedIn ? (
-    <button onClick={signOut}>Sign Out</button>
-  ) : (
-    <button onClick={signIn}> Sign In</button>
-  )
+  const { isLoggedIn, signOut } = useAuthStore()
+  const navigate = useNavigate()
+
+  const handleSignOut = () => {
+    signOut()
+    navigate('/login')
+  }
+
+  return isLoggedIn && <button onClick={handleSignOut}>Sign Out</button>
 }
 
 export function Header() {

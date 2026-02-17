@@ -4,7 +4,8 @@ export const useAuthStore = create((set) => ({
   // State
   isLoggedIn: false,
 
-  // Actions
+  // Mock Actions
   signIn: () => set({ isLoggedIn: true }),
-  signOut: () => set({ isLoggedIn: false })
+  signOut: () => set({ isLoggedIn: false }),
+  signUp: () => set({ isLoggedIn: true })
 }))

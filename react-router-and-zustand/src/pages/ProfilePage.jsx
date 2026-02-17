@@ -1,8 +1,15 @@
 import { useAuthStore } from '../store/auth'
+import { useFavoriteStore } from '../store/favoritesStore'
 import styles from './ProfilePage.module.css'
 
 export default function ProfilePage() {
   const { signOut } = useAuthStore()
+  const { clearFavorites } = useFavoriteStore()
+
+  const handleSignOut = () => {
+    clearFavorites()
+    signOut()
+  }
 
   return (
     <main className={styles.profilePage}>
@@ -73,7 +80,7 @@ export default function ProfilePage() {
       <section className={styles.profileActions}>
         <div className={styles.actionsRow}>
           <button>Edit Profile</button>
-          <button onClick={signOut}>Sign Out</button>
+          <button onClick={handleSignOut}>Sign Out</button>
         </div>
       </section>
     </main>

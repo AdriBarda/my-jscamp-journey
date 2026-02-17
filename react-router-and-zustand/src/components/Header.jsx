@@ -5,10 +5,12 @@ import { useFavoriteStore } from '../store/favoritesStore'
 
 function SigninButton() {
   const { isLoggedIn, signOut } = useAuthStore()
+  const { clearFavorites } = useFavoriteStore()
   const navigate = useNavigate()
 
   const handleSignOut = () => {
     signOut()
+    clearFavorites()
     navigate('/login')
   }
 

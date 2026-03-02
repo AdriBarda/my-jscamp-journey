@@ -4,25 +4,25 @@ import { AddToFavoritesButton } from './Buttons/AddToFavoritesButton.jsx'
 import { ApplyButton } from './Buttons/ApplyButton.jsx'
 
 export function JobCard({ job }) {
-  const { id, data, titulo, empresa, ubicacion, descripcion } = job
+  const { id, data, title, company, location, description } = job
 
   return (
     <article
       className={styles.jobListingCard}
-      data-location={data?.modalidad}
-      data-experience={data?.nivel}
+      data-location={data?.location}
+      data-experience={data?.experience}
       data-technology={data?.technology}
     >
       <div>
         <h3>
           <Link className={styles.title} href={`/jobs/${id}`}>
-            {titulo}
+            {title}
           </Link>
         </h3>
         <small>
-          {empresa} | {ubicacion}
+          {company} | {location}
         </small>
-        <p>{descripcion}</p>
+        <p>{description}</p>
       </div>
       <div className={styles.actions}>
         <Link href={`/jobs/${id}`} className={styles.details}>

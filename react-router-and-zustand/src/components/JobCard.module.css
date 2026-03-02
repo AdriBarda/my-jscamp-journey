@@ -30,6 +30,7 @@
   border-bottom: 1px solid var(--border);
   margin: 0;
   display: flex;
+  justify-content: space-between;
   align-items: start;
   gap: 1rem;
 }

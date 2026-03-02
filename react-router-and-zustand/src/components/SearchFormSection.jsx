@@ -119,12 +119,46 @@ export function SearchFormSection({
               <option value="python">Python</option>
               <option value="php">PHP</option>
               <option value="java">Java</option>
+              <option value="go">Go</option>
             </optgroup>
 
-            <optgroup label="DB">
+            <optgroup label="Database">
               <option value="mysql">MySQL</option>
               <option value="mongodb">MongoDB</option>
               <option value="postgresql">PostgreSQL</option>
+              <option value="sql">SQL</option>
+            </optgroup>
+
+            <optgroup label="Cloud & DevOps">
+              <option value="aws">AWS</option>
+              <option value="docker">Docker</option>
+              <option value="kubernetes">Kubernetes</option>
+              <option value="terraform">Terraform</option>
+            </optgroup>
+
+            <optgroup label="Testing & QA">
+              <option value="cypress">Cypress</option>
+              <option value="jest">Jest</option>
+              <option value="selenium">Selenium</option>
+            </optgroup>
+
+            <optgroup label="Design">
+              <option value="figma">Figma</option>
+              <option value="prototyping">Prototyping</option>
+              <option value="usability-testing">Usability Testing</option>
+            </optgroup>
+
+            <optgroup label="Mobile">
+              <option value="firebase">Firebase</option>
+              <option value="flutter">Flutter</option>
+              <option value="ios">iOS</option>
+              <option value="swift">Swift</option>
+              <option value="xcode">Xcode</option>
+            </optgroup>
+
+            <optgroup label="Data & AI">
+              <option value="pandas">Pandas</option>
+              <option value="tensorflow">TensorFlow</option>
             </optgroup>
           </select>
 
@@ -138,18 +172,31 @@ export function SearchFormSection({
             className={focusedField === 'location' ? styles.inputFocused : ''}
           >
             <option value="">All Locations</option>
-            <optgroup label="Spain">
-              <option value="barcelona">Barcelona</option>
-              <option value="madrid">Madrid</option>
-              <option value="valencia">Valencia</option>
+            <optgroup label="Remote">
+              <option value="remote">🌍 Remote</option>
             </optgroup>
-            <optgroup label="Mexico">
-              <option value="cdmx">Mexico City</option>
-              <option value="guadalajara">Guadalajara</option>
-              <option value="monterrey">Monterrey</option>
+
+            <optgroup label="Europe">
+              <option value="amsterdam">Amsterdam, Netherlands</option>
+              <option value="barcelona">Barcelona, Spain</option>
+              <option value="berlin">Berlin, Germany</option>
+              <option value="dublin">Dublin, Ireland</option>
+              <option value="lisbon">Lisbon, Portugal</option>
+              <option value="london">London, UK</option>
+              <option value="madrid">Madrid, Spain</option>
+              <option value="manchester">Manchester, UK</option>
+              <option value="paris">Paris, France</option>
+              <option value="valencia">Valencia, Spain</option>
             </optgroup>
-            <hr />
-            <option value="remoto">🌍 Remote</option>
+
+            <optgroup label="North America">
+              <option value="boston">Boston, USA</option>
+              <option value="chicago">Chicago, USA</option>
+              <option value="cdmx">Mexico City, Mexico</option>
+              <option value="nyc">New York, USA</option>
+              <option value="sf">San Francisco, USA</option>
+              <option value="toronto">Toronto, Canada</option>
+            </optgroup>
           </select>
 
           <select
@@ -166,7 +213,6 @@ export function SearchFormSection({
             <option value="mid">Mid-level</option>
             <option value="senior">Senior</option>
             <option value="lead">Lead</option>
-            <hr />
             <option value="internship">Internship</option>
             <option value="freelance">Freelance</option>
           </select>

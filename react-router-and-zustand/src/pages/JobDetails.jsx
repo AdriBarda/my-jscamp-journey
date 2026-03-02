@@ -28,13 +28,14 @@ function JobSection({ title, content }) {
 export default function JobDetails() {
   const { jobId } = useParams()
   const navigate = useNavigate()
+  const apiBaseUrl = import.meta.env.VITE_APP_BASE_URL
 
   const [job, setJob] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    fetch(`https://jscamp-api.vercel.app/api/jobs/${jobId}`)
+    fetch(`${apiBaseUrl}/jobs/${jobId}`)
       .then((response) => {
         setLoading(true)
         if (!response.ok) {
@@ -46,7 +47,7 @@ export default function JobDetails() {
       .then((json) => setJob(json))
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false))
-  }, [jobId, navigate])
+  }, [apiBaseUrl, jobId, navigate])
 
   if (loading) {
     return <FallbackLoadingComponent />
@@ -74,16 +75,16 @@ export default function JobDetails() {
             Jobs
           </Link>
           <span className={styles.breadcrumbSeparator}>/</span>
-          <span className={styles.breadcrumbCurrent}>{job.titulo}</span>
+          <span className={styles.breadcrumbCurrent}>{job.title}</span>
         </nav>
       </div>
 
       <header className={styles.header}>
         <div>
-          <h1 className={styles.title}>{job.titulo}</h1>
+          <h1 className={styles.title}>{job.title}</h1>
           <div className={styles.meta}>
             <p className={styles.company}>
-              {job.empresa} - {job.ubicacion}
+              {job.company} - {job.location}
             </p>
           </div>
         </div>
@@ -92,10 +93,10 @@ export default function JobDetails() {
         <ApplyButton jobId={job.id} />
         <AddToFavoritesButton jobId={job.id} />
       </div>
-      <JobSection title="Job description" content={job.content.description} />
-      <JobSection title="Responsibilities" content={job.content.responsibilities} />
-      <JobSection title="Job Requirements" content={job.content.requirements} />
-      <JobSection title="About" content={job.content.about} />
+      <JobSection title="Job description" content={job.content?.description ?? ''} />
+      <JobSection title="Responsibilities" content={job.content?.responsibilities ?? ''} />
+      <JobSection title="Job Requirements" content={job.content?.requirements ?? ''} />
+      <JobSection title="About" content={job.content?.about ?? ''} />
     </div>
   )
 }

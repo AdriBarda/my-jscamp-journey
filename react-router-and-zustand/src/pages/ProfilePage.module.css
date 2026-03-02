@@ -162,9 +162,9 @@
   }
 }
 
-article {
+.profilePage article {
   background: none;
-  border-radius: none;
+  border-radius: 0;
   box-shadow: none;
   padding: 0;
 }

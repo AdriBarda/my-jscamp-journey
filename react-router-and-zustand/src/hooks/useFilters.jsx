@@ -4,6 +4,7 @@ import { useDebounce } from './useDebounce'
 
 export const useFilters = () => {
   const RESULTS_PER_PAGE = 4
+  const apiBaseUrl = import.meta.env.VITE_APP_BASE_URL
 
   const [searchParams, setSearchParams] = useSearchParams()
 
@@ -13,8 +14,8 @@ export const useFilters = () => {
   const [filters, setFilters] = useState(() => {
     return {
       technology: searchParams.get('technology') || '',
-      location: searchParams.get('type') || '',
-      experienceLevel: searchParams.get('level') || ''
+      location: searchParams.get('location') || '',
+      experienceLevel: searchParams.get('experience') || ''
     }
   })
 
@@ -29,7 +30,7 @@ export const useFilters = () => {
 
   const hasFilters = Object.values(filters).some((filter) => filter !== '')
 
-  const [jobs, setjobs] = useState([])
+  const [jobs, setJobs] = useState([])
   const [total, setTotal] = useState(0)
   const [loading, setLoading] = useState(true)
 
@@ -41,8 +42,8 @@ export const useFilters = () => {
         const params = new URLSearchParams()
         if (debouncedTextToFilter) params.append('text', debouncedTextToFilter)
         if (filters.technology) params.append('technology', filters.technology)
-        if (filters.location) params.append('type', filters.location)
-        if (filters.experienceLevel) params.append('level', filters.experienceLevel)
+        if (filters.location) params.append('location', filters.location)
+        if (filters.experienceLevel) params.append('experience', filters.experienceLevel)
 
         const offset = (currentPage - 1) * RESULTS_PER_PAGE
         params.append('limit', RESULTS_PER_PAGE)
@@ -50,11 +51,11 @@ export const useFilters = () => {
 
         const queryParams = params.toString()
 
-        const response = await fetch(`https://jscamp-api.vercel.app/api/jobs?${queryParams}`)
+        const response = await fetch(`${apiBaseUrl}/jobs?${queryParams}`)
         const json = await response.json()
 
-        setjobs(json.data)
-        setTotal(json.total)
+        setJobs(json.data)
+        setTotal(json.results ?? 0)
       } catch (error) {
         console.error('Error fetching jobs:', error)
       } finally {
@@ -63,7 +64,7 @@ export const useFilters = () => {
     }
 
     fetchJobs()
-  }, [filters, currentPage, debouncedTextToFilter])
+  }, [apiBaseUrl, filters, currentPage, debouncedTextToFilter])
 
   useEffect(() => {
     setSearchParams(() => {
@@ -71,8 +72,8 @@ export const useFilters = () => {
 
       if (textToFilter) nextParams.set('text', textToFilter)
       if (filters.technology) nextParams.set('technology', filters.technology)
-      if (filters.location) nextParams.set('type', filters.location)
-      if (filters.experienceLevel) nextParams.set('level', filters.experienceLevel)
+      if (filters.location) nextParams.set('location', filters.location)
+      if (filters.experienceLevel) nextParams.set('experience', filters.experienceLevel)
 
       if (currentPage > 1) nextParams.set('page', String(currentPage))
       return nextParams

@@ -3,7 +3,6 @@ import { corsMiddleware } from './middlewares/cors.js'
 import { jobsRouter } from './routes/jobs.js'
 import { loggerMiddleware } from './middlewares/logger.js'
 
-process.loadEnvFile()
 const PORT = process.env.PORT || 1234
 const app = express()
 
@@ -26,6 +25,10 @@ app.get('/health', (req, res) => {
 
 app.use('/jobs', jobsRouter)
 
-app.listen(PORT, () => {
-  console.log(`✅ Server's up at http://localhost:${PORT}`)
-})
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`✅ Server's up at http://localhost:${PORT}`)
+  })
+}
+
+export default app

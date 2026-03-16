@@ -25,7 +25,7 @@ app.get('/health', (req, res) => {
 
 app.use('/jobs', jobsRouter)
 
-if (process.env.NODE_ENV !== 'production') {
+if (!process.env.NODE_ENV) {
   app.listen(PORT, () => {
     console.log(`✅ Server's up at http://localhost:${PORT}`)
   })

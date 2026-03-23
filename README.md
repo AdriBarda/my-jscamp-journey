@@ -14,6 +14,10 @@
   </p>
 </div>
 
+<p align="center">
+  <img src=".github/MyDevJobs.png" alt="MyDevJobs preview" width="900" />
+</p>
+
 ## Overview
 
 This repository groups the project in multiple stages, starting with plain HTML/CSS/JS

@@ -15,6 +15,11 @@
     ],
     "links": [
       {
+        "href": "readme-static-minimal.html",
+        "label": "Open static README",
+        "icon": "▶"
+      },
+      {
         "href": "static-minimal-version/index.html",
         "label": "Open index.html",
         "icon": "▶"
@@ -47,6 +52,11 @@
       "Easier to organise and maintain"
     ],
     "links": [
+      {
+        "href": "readme-react-first-steps.html",
+        "label": "Open first steps README",
+        "icon": "▶"
+      },
       {
         "href": "react-first-steps/react.html",
         "label": "Open react.html",
@@ -98,6 +108,72 @@
       {
         "href": "readme-router-zustand.html",
         "label": "Open Router + Zustand README",
+        "icon": "▶"
+      }
+    ]
+  },
+  {
+    "eyebrow": "Stage 05",
+    "title": "Node Intro",
+    "meta": "Core Node.js exercises and native server basics.",
+    "paragraphs": [
+      "This folder is a sandbox for understanding Node without any framework abstraction. It covers small scripts, file system operations, command-line tools, and a simple HTTP server built with native modules.",
+      "It works as the backend fundamentals layer before moving into Express and more structured API work."
+    ],
+    "listTitle": "Includes",
+    "listItems": [
+      "Basic Node scripts and environment usage",
+      "A custom CLI to inspect files and directories",
+      "A lightweight users API built with node:http"
+    ],
+    "links": [
+      {
+        "href": "readme-node-intro.html",
+        "label": "Open Node Intro README",
+        "icon": "▶"
+      }
+    ]
+  },
+  {
+    "eyebrow": "Stage 06",
+    "title": "Express API",
+    "meta": "Backend layer with routes, validation, and tests.",
+    "paragraphs": [
+      "This stage moves the backend from native Node experiments into an Express application with clearer project structure. It introduces middleware, route modules, controllers, schemas, and a jobs-focused API.",
+      "It is the server-side counterpart to the frontend app and helps test more realistic integration flows."
+    ],
+    "listTitle": "Focus",
+    "listItems": [
+      "Express routing and middleware composition",
+      "Zod validation for request payloads",
+      "Integration tests with the Node test runner"
+    ],
+    "links": [
+      {
+        "href": "readme-express.html",
+        "label": "Open Express README",
+        "icon": "▶"
+      }
+    ]
+  },
+  {
+    "eyebrow": "Stage 07",
+    "title": "Testing",
+    "meta": "End-to-end experiments for the app.",
+    "paragraphs": [
+      "This folder is used to validate user flows from the outside, interacting with the running app as a real browser would. It contains both classic Playwright tests and an AI-assisted Stagehand experiment.",
+      "The goal is to compare different testing approaches while the app continues to evolve."
+    ],
+    "listTitle": "Contains",
+    "listItems": [
+      "Playwright browser tests",
+      "AI-assisted E2E automation with Stagehand",
+      "A separate workspace focused only on testing workflows"
+    ],
+    "links": [
+      {
+        "href": "readme-testing.html",
+        "label": "Open Testing README",
         "icon": "▶"
       }
     ]

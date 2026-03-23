@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Testing - README</title>
+    <style>
+      :root {
+        --primary-400: oklch(0.63 0.14 297.53);
+        --primary-500: oklch(0.4867 0.1801 297.53);
+        --primary-600: oklch(0.42 0.17 297.53);
+        --bg-0: oklch(0.985 0.012 300);
+        --bg-1: oklch(0.972 0.014 300);
+        --bg-2: oklch(0.955 0.016 300);
+        --border: oklch(0.885 0.02 300);
+        --text-1: oklch(0.19 0.02 295);
+        --text-2: oklch(0.32 0.018 295);
+        --shadow: 0 18px 60px oklch(25.016% 0.01894 294.131 / 0.25);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        color: var(--text-1);
+        background:
+          radial-gradient(800px 800px at 10% 0%, #cebcff 0%, transparent 60%),
+          radial-gradient(
+            900px 900px at 90% 12%,
+            oklch(96.089% 0.06676 146.411) 0%,
+            transparent 55%
+          ),
+          var(--bg-0);
+        min-height: 100vh;
+      }
+
+      header {
+        padding: 48px 20px 12px;
+        text-align: center;
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        font-size: clamp(2rem, 3vw + 1.6rem, 3.4rem);
+        letter-spacing: -0.02em;
+      }
+
+      p.lead {
+        margin: 0 auto;
+        max-width: 720px;
+        color: var(--text-2);
+        font-size: 1.05rem;
+        line-height: 1.6;
+      }
+
+      main {
+        max-width: 980px;
+        margin: 20px auto 72px;
+        padding: 0 20px;
+      }
+
+      .card {
+        background: linear-gradient(140deg, #ffffff 0%, var(--bg-1) 60%);
+        border-radius: 18px;
+        padding: 26px;
+        box-shadow: var(--shadow);
+        border: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
+        display: grid;
+        gap: 16px;
+      }
+
+      .badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: color-mix(in oklab, var(--bg-2) 80%, white);
+        border: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      h2 {
+        margin: 6px 0 0;
+        font-size: 1.35rem;
+        letter-spacing: -0.01em;
+      }
+
+      p {
+        margin: 0;
+        color: var(--text-2);
+        line-height: 1.6;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--text-2);
+      }
+
+      ul li + li {
+        margin-top: 6px;
+      }
+
+      .steps {
+        display: grid;
+        gap: 8px;
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+          monospace;
+        font-size: 0.95rem;
+        color: var(--text-1);
+      }
+
+      .steps code {
+        background: color-mix(in oklab, var(--bg-2) 85%, white);
+        padding: 6px 10px;
+        border-radius: 10px;
+        border: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
+        display: inline-block;
+      }
+
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 6px;
+      }
+
+      a.link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 14px;
+        border-radius: 999px;
+        text-decoration: none;
+        color: var(--text-1);
+        border: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
+        transition:
+          transform 0.2s ease,
+          border-color 0.2s ease,
+          box-shadow 0.2s ease;
+        background: color-mix(in oklab, var(--bg-2) 80%, white);
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+
+      a.link:hover {
+        border-color: var(--primary-500);
+        box-shadow: 0 0 14px 3px oklch(60% 0.08 295 / 0.35);
+        transform: translateY(-2px);
+      }
+
+      a.link span {
+        color: var(--primary-500);
+        font-weight: 700;
+      }
+
+      footer {
+        text-align: center;
+        color: var(--text-2);
+        font-size: 0.9rem;
+        padding: 12px 20px 32px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Testing</h1>
+      <p class="lead">
+        A dedicated area for end-to-end experiments, including classic Playwright flows and an
+        AI-assisted browser automation prototype with Stagehand.
+      </p>
+    </header>
+
+    <main>
+      <section class="card">
+        <div class="badges">
+          <span class="badge">Playwright</span>
+          <span class="badge">E2E</span>
+          <span class="badge">Stagehand</span>
+          <span class="badge">Browser Automation</span>
+        </div>
+
+        <div>
+          <h2>Overview</h2>
+          <p>
+            This folder groups testing experiments for the app. One track uses Playwright for more
+            deterministic UI flows, while another explores AI-driven end-to-end automation against a
+            running local app.
+          </p>
+        </div>
+
+        <div>
+          <h2>Scope</h2>
+          <ul>
+            <li><code>testing/e2e</code> contains Playwright configuration and browser tests</li>
+            <li><code>testing/ai-e2e-test</code> contains a Stagehand-based test flow</li>
+            <li>Both setups assume the frontend app is already running locally</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2>Run</h2>
+          <div class="steps">
+            <code>cd testing/e2e &amp;&amp; pnpm exec playwright test</code>
+            <code>cd testing/ai-e2e-test &amp;&amp; node test-ai.js</code>
+            <code>Make sure the app is available at http://localhost:5173</code>
+          </div>
+        </div>
+
+        <div class="links">
+          <a class="link" href="./index.html"><span>↩</span> Back to root</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>Use this area to compare deterministic and AI-assisted E2E flows.</footer>
+  </body>
+</html>

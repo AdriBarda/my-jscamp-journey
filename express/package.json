@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "dev": "node --watch app.js",
-    "test": "node --watch app.test.js"
+    "test": "node app.test.js",
+    "test:watch": "node --watch app.test.js"
   },
   "keywords": [],
   "author": "AdriBarda",

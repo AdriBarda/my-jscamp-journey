@@ -26,6 +26,10 @@ from a Vue background, following the JSCamp path.
 - `static-minimal-version/`: the pure HTML/CSS/JS prototype (no build step)
 - `react-first-steps/`: early React steps
 - `react/`: the main React version using Vite
+- `react-router-and-zustand/`: routing and shared state iteration with React Router and Zustand
+- `node-intro/`: Node.js fundamentals, CLI exercises, and a small native HTTP server
+- `express/`: the backend API layer with routes, validation, and tests
+- `testing/`: end-to-end testing experiments with Playwright and Stagehand
 
 ## Goal
 

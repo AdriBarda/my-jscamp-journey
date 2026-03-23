@@ -33,5 +33,11 @@ export function validateJob(input) {
 }
 
 export function validatePartialJob(input) {
-  return jobSchema.partial().safeParse(input)
+  return jobSchema
+    .extend({
+      data: jobDataSchema.partial(),
+      content: jobContentSchema.partial()
+    })
+    .partial()
+    .safeParse(input)
 }

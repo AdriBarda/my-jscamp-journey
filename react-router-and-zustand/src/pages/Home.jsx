@@ -47,6 +47,7 @@ export default function HomePage() {
               name="search"
               required
               type="text"
+              role="searchbox"
               placeholder="Search a job by title, skill or company"
             />
             <button type="submit">Search</button>

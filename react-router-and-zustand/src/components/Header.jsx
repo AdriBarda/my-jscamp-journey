@@ -4,7 +4,7 @@ import { useAuthStore } from '../store/auth'
 import { useFavoriteStore } from '../store/favoritesStore'
 
 function SigninButton() {
-  const { isLoggedIn, signOut } = useAuthStore()
+  const { isLoggedIn, signIn, signOut } = useAuthStore()
   const { clearFavorites } = useFavoriteStore()
   const navigate = useNavigate()
 
@@ -14,7 +14,11 @@ function SigninButton() {
     navigate('/login')
   }
 
-  return isLoggedIn && <button onClick={handleSignOut}>Sign Out</button>
+  return isLoggedIn ? (
+    <button onClick={handleSignOut}>Sign Out</button>
+  ) : (
+    <button onClick={signIn}>Sign In</button>
+  )
 }
 
 export function Header() {

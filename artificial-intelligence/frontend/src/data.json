@@ -1,0 +1,122 @@
+[
+  {
+    "id": "a3f1c2b4-8d72-4f3a-9a8b-6e7c5d1f2a30",
+    "title": "Software Engineer",
+    "company": "Tech Solutions Inc.",
+    "location": "Remote",
+    "summary": "We are looking for a passionate software engineer with experience in web development and modern JavaScript frameworks, preferably React and Node.js. The perfect candidate must be a team player and have great communication skills.",
+    "data": {
+      "technology": ["javascript", "react", "node"],
+      "locationCode": "remote",
+      "experience": "senior"
+    }
+  },
+  {
+    "id": "c7b9e1d2-3a4f-4c8e-9b1a-2d3e4f5a6b7c",
+    "title": "Data Analyst",
+    "company": "Data Driven Co.",
+    "location": "Mexico City",
+    "summary": "We are looking for a passionate data analyst with experience in data visualization and statistical analysis. The ideal candidate should be proficient in Python and SQL, and have strong problem-solving skills.",
+    "data": {
+      "technology": ["python", "sql"],
+      "locationCode": "cdmx",
+      "experience": "mid"
+    }
+  },
+  {
+    "id": "e2a4c6d8-5b7f-4c1d-8e9a-0b1c2d3e4f50",
+    "title": "IOS Developer",
+    "company": "Mobile Apps Ltd.",
+    "location": "Guadalajara",
+    "summary": "We are looking for a passionate iOS developer with experience in Swift and Objective-C. The ideal candidate should have a strong portfolio of iOS applications and be able to work in a fast-paced environment.",
+    "data": {
+      "technology": ["swift", "objective-c"],
+      "locationCode": "guadalajara",
+      "experience": "junior"
+    }
+  },
+  {
+    "id": "f1d3b5a7-9c2e-4b6d-8f10-1a2b3c4d5e6f",
+    "title": "DevOps Engineer",
+    "company": "Cloud Services Ltd.",
+    "location": "Remote",
+    "summary": "We are looking for a passionate DevOps engineer with experience in cloud platforms, containerization (Docker, Kubernetes), and CI/CD pipelines. The ideal candidate should be proficient in automation tools and have strong problem-solving skills.",
+    "data": {
+      "technology": ["docker", "kubernetes", "ci/cd"],
+      "locationCode": "remote",
+      "experience": "senior"
+    }
+  },
+  {
+    "id": "1f9a2c3d-4b5e-4f6a-8b7c-9d0e1f2a3b4c",
+    "title": "Frontend Developer",
+    "company": "PixelCraft Studio",
+    "location": "Barcelona",
+    "summary": "We are looking for a frontend developer with strong React skills, a good eye for UI details, and experience working with design systems. Familiarity with TypeScript and modern testing tools is a plus.",
+    "data": {
+      "technology": ["react", "typescript"],
+      "locationCode": "barcelona",
+      "experience": "mid"
+    }
+  },
+  {
+    "id": "2a3b4c5d-6e7f-4a8b-9c0d-1e2f3a4b5c6d",
+    "title": "Backend Engineer",
+    "company": "NorthWind Labs",
+    "location": "Madrid",
+    "summary": "We are looking for a backend engineer to design and maintain scalable APIs in Node.js. Experience with microservices, PostgreSQL, and cloud infrastructure is required.",
+    "data": {
+      "technology": ["node", "postgresql", "microservices", "cloud"],
+      "locationCode": "madrid",
+      "experience": "senior"
+    }
+  },
+  {
+    "id": "3c4d5e6f-7a8b-4c9d-0e1f-2a3b4c5d6e7f",
+    "title": "Full Stack Developer",
+    "company": "BrightPath Solutions",
+    "location": "Valencia",
+    "summary": "We are looking for a full stack developer with experience building web apps using JavaScript, Node.js, and modern frontend frameworks. You should be comfortable across the stack and enjoy collaborating with product teams.",
+    "data": {
+      "technology": ["javascript", "node"],
+      "locationCode": "valencia",
+      "experience": "mid"
+    }
+  },
+  {
+    "id": "4d5e6f7a-8b9c-4d0e-1f2a-3b4c5d6e7f80",
+    "title": "QA Automation Engineer",
+    "company": "QualityFirst",
+    "location": "Mexico City",
+    "summary": "We are looking for a QA automation engineer with Python experience to build and maintain robust test suites. Familiarity with CI pipelines and API testing is essential.",
+    "data": {
+      "technology": ["python", "ci", "api"],
+      "locationCode": "cdmx",
+      "experience": "mid"
+    }
+  },
+  {
+    "id": "5e6f7a8b-9c0d-4e1f-2a3b-4c5d6e7f8091",
+    "title": "Database Administrator",
+    "company": "DataCore Systems",
+    "location": "Monterrey",
+    "summary": "We are looking for a database administrator with strong PostgreSQL expertise. You will optimize performance, manage backups, and ensure high availability across production systems.",
+    "data": {
+      "technology": ["postgresql"],
+      "locationCode": "monterrey",
+      "experience": "senior"
+    }
+  },
+  {
+    "id": "6f7a8b9c-0d1e-4f2a-3b4c-5d6e7f8091a2",
+    "title": "UI/UX Designer",
+    "company": "Crafted Interfaces",
+    "location": "Remote",
+    "summary": "We are looking for a UI/UX designer to craft intuitive interfaces and collaborate closely with frontend engineers. A strong portfolio and experience with prototyping tools are required.",
+    "data": {
+      "technology": [],
+      "locationCode": "remote",
+      "experience": "junior"
+    }
+  }
+]

@@ -1,0 +1,23 @@
+.container {
+  display: grid;
+  place-items: center;
+  min-height: 40vh;
+}
+
+.emoji {
+  font-size: 3rem;
+  line-height: 1;
+  animation: slide-left linear infinite;
+  will-change: transform;
+}
+
+@keyframes slide-left {
+  from {
+    transform: translateX(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-40px);
+    opacity: 1;
+  }
+}

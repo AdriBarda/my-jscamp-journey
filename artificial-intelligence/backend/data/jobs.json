@@ -1,0 +1,488 @@
+[
+  {
+    "id": "c92a7f31-8e4d-4b7c-9a21-3d8f5e1a7b01",
+    "title": "Full Stack Developer",
+    "company": "NovaStack Systems",
+    "location": "Amsterdam, Netherlands",
+    "description": "Join a product squad building SaaS workflow tools for logistics clients with React, Node.js and PostgreSQL. The role mixes new feature delivery, API design and day-to-day performance improvements.",
+    "data": {
+      "technology": ["react", "node", "postgresql", "docker"],
+      "location": "amsterdam",
+      "experience": "mid"
+    },
+    "content": {
+      "description": "You will work across the full stack on booking, billing and reporting modules used daily by operations teams across Europe. The team ships in short iterations, cares about maintainable code and expects engineers to contribute to both product discussions and technical decisions.",
+      "responsibilities": "- Build user-facing features in React for dashboards, search flows and account settings.\n- Design and maintain Node.js APIs that support reporting and transactional workflows.\n- Write and review PostgreSQL queries, schema changes and data migrations.\n- Add automated tests for critical paths and help investigate production issues.\n- Collaborate with design, product and QA during planning, delivery and release.",
+      "requirements": "- 3+ years building production web applications across frontend and backend.\n- Solid experience with React, JavaScript or TypeScript, and Node.js services.\n- Comfortable working with relational data models, SQL and debugging API issues.\n- Familiarity with Docker-based local development and Git-based team workflows.\n- Clear communication and enough product sense to challenge vague requirements.",
+      "about": "NovaStack Systems builds workflow software for logistics and operations teams that need reliable planning, billing and reporting tools across multiple European markets."
+    }
+  },
+  {
+    "id": "e17b3c92-4d5f-4a1b-9c3e-8f2d7b6a1c22",
+    "title": "Junior Frontend Developer",
+    "company": "PixelForge Labs",
+    "location": "Remote",
+    "description": "Entry-level frontend role on a remote product team creating branded campaign sites and lightweight web apps for startups. Good fit for someone with solid fundamentals who wants strong mentorship.",
+    "data": {
+      "technology": ["javascript", "react", "css", "html"],
+      "location": "remote",
+      "experience": "junior"
+    },
+    "content": {
+      "description": "You will support senior engineers in turning Figma files into polished interfaces, fixing usability issues and keeping the component library consistent. The work is practical and fast-moving, with regular feedback and room to grow into larger feature ownership.",
+      "responsibilities": "- Implement small to medium UI features in React using existing design patterns.\n- Fix visual bugs, layout regressions and browser compatibility issues.\n- Maintain reusable CSS and shared components across active client projects.\n- Participate in code reviews, pairing sessions and weekly frontend learning sessions.\n- Help test responsive behavior on mobile, tablet and desktop breakpoints.",
+      "requirements": "- Strong HTML, CSS and JavaScript basics through coursework, projects or early professional work.\n- Some hands-on experience with React and component-based development.\n- Understanding of responsive layouts, semantic markup and accessible UI basics.\n- Willingness to ask questions, absorb feedback and iterate quickly.\n- Good written communication in an async remote environment.",
+      "about": "PixelForge Labs is a distributed studio that designs and builds digital products for early-stage companies that need polished launches without building a large internal team."
+    }
+  },
+  {
+    "id": "a6f3b2d1-9c8e-4b7a-b5d1-2e4f6c7a8b33",
+    "title": "Senior Data Scientist",
+    "company": "Quantify AI",
+    "location": "New York, USA",
+    "description": "Lead applied machine learning and experimentation work for enterprise clients in retail and fintech. This role combines model development, stakeholder communication and technical leadership.",
+    "data": {
+      "technology": ["python", "pandas", "tensorflow", "sql"],
+      "location": "nyc",
+      "experience": "senior"
+    },
+    "content": {
+      "description": "You will drive projects from problem framing through production rollout, working with analysts, engineers and client stakeholders. Success in the role means balancing statistical rigor with practical delivery, and helping less experienced teammates make better modeling decisions.",
+      "responsibilities": "- Develop forecasting, classification and recommendation models using production-quality Python workflows.\n- Explore large datasets, define meaningful features and validate model performance with robust evaluation methods.\n- Partner with data engineers to operationalize pipelines and monitor model behavior after deployment.\n- Present tradeoffs, assumptions and outcomes to product leaders and non-technical client teams.\n- Mentor junior data scientists through reviews, experimentation design and research direction.",
+      "requirements": "- 5+ years in data science or machine learning roles with shipped business impact.\n- Strong Python skills and fluency with SQL for analysis and feature extraction.\n- Experience with modern ML frameworks and end-to-end model deployment practices.\n- Ability to explain uncertain results clearly without overselling confidence.\n- Comfortable leading projects that span technical and business stakeholders.",
+      "about": "Quantify AI builds applied machine learning systems for large organizations that want measurable operational gains, not just prototypes and slide decks."
+    }
+  },
+  {
+    "id": "b1a7c9e3-6d4f-4b8a-a2c1-9f3e7d6b5a44",
+    "title": "Platform Engineer",
+    "company": "CloudBridge Tech",
+    "location": "Remote",
+    "description": "Help product teams ship faster by improving the internal platform that powers deployments, observability and self-service infrastructure on AWS and Kubernetes.",
+    "data": {
+      "technology": ["kubernetes", "terraform", "aws", "go"],
+      "location": "remote",
+      "experience": "senior"
+    },
+    "content": {
+      "description": "You will work on platform reliability, developer experience and automation for engineering teams running dozens of services. The role is hands-on and operational, with a strong focus on reducing toil and making safe deployment paths the default.",
+      "responsibilities": "- Maintain and evolve Kubernetes clusters used by multiple product teams.\n- Build Terraform modules and automation that standardize cloud provisioning.\n- Improve CI/CD workflows, deployment rollbacks and release visibility.\n- Write internal tooling in Go or shell to reduce repetitive operational work.\n- Partner with engineers to debug incidents and improve platform usability.",
+      "requirements": "- Strong experience operating Kubernetes in production environments.\n- Solid Terraform knowledge and practical AWS infrastructure experience.\n- Comfort debugging networking, container runtime and deployment issues.\n- Some experience writing tooling in Go, Python or a similar language.\n- Bias toward documentation, automation and sustainable platform practices.",
+      "about": "CloudBridge Tech builds internal platform capabilities for growing software companies that need stronger reliability without turning every product engineer into an infrastructure specialist."
+    }
+  },
+  {
+    "id": "d4e8f1a7-3b2c-4d9e-a6f1-7c3e9b5a2d55",
+    "title": "UX Researcher",
+    "company": "HumanFirst Design",
+    "location": "Berlin, Germany",
+    "description": "Run discovery and evaluative research for digital products in health, finance and public services. The role focuses on turning messy customer signals into concrete product direction.",
+    "data": {
+      "technology": ["figma", "usability-testing", "prototyping"],
+      "location": "berlin",
+      "experience": "mid"
+    },
+    "content": {
+      "description": "You will design research plans, moderate sessions and synthesize findings into practical recommendations for product and design teams. This is not a research-for-research's-sake role; the work is expected to influence priorities, copy, flows and interaction patterns.",
+      "responsibilities": "- Plan and conduct user interviews, concept tests and moderated usability studies.\n- Synthesize qualitative insights into patterns, opportunities and clear decision inputs.\n- Work with designers to validate prototypes before engineering investment increases.\n- Help teams define research questions that map to product risk, not generic curiosity.\n- Present findings in a way that is concise, credible and easy for stakeholders to act on.",
+      "requirements": "- 3+ years conducting applied UX research in product environments or agencies.\n- Strong moderation, note-taking and synthesis skills across qualitative methods.\n- Experience working with prototypes, testing tools and cross-functional product teams.\n- Ability to balance participant empathy with sharp analytical judgment.\n- Clear writing and storytelling skills for presenting evidence and recommendations.",
+      "about": "HumanFirst Design partners with product teams that need deeper customer understanding to improve task-heavy digital experiences used in real-world, high-friction contexts."
+    }
+  },
+  {
+    "id": "f7a2c8b1-9e4d-4a3c-b2f1-8d6e7c5a9b66",
+    "title": "QA Automation Engineer",
+    "company": "SoftEdge Technologies",
+    "location": "Lisbon, Portugal",
+    "description": "Strengthen release confidence across several web products by expanding test automation, tightening regression coverage and improving CI feedback loops.",
+    "data": {
+      "technology": ["selenium", "cypress", "jest"],
+      "location": "lisbon",
+      "experience": "mid"
+    },
+    "content": {
+      "description": "You will work closely with engineers and product teams to automate critical user journeys, reduce flaky tests and make quality issues visible earlier in the delivery cycle. The role blends hands-on scripting with practical process improvement.",
+      "responsibilities": "- Build and maintain automated test suites for core checkout, onboarding and account flows.\n- Investigate flaky tests, unstable environments and gaps in regression coverage.\n- Integrate UI and API tests into CI pipelines with clear reporting for engineering teams.\n- Document testing strategies, acceptance criteria and quality risks for upcoming releases.\n- Support root-cause analysis when bugs escape to staging or production.",
+      "requirements": "- Professional experience with Selenium, Cypress, Playwright or comparable automation tools.\n- Understanding of QA strategies, test design and risk-based prioritization.\n- Familiarity with CI/CD pipelines and version-controlled test automation workflows.\n- Ability to read application code and collaborate effectively with developers.\n- Detail-oriented mindset without losing focus on business-critical scenarios.",
+      "about": "SoftEdge Technologies develops enterprise software for operations-heavy businesses where release quality matters because downtime and broken workflows quickly become expensive."
+    }
+  },
+  {
+    "id": "c3d7e9a1-5b2f-4c8a-9d1e-6f3a7b2c8d77",
+    "title": "iOS Developer",
+    "company": "AppSphere Mobile",
+    "location": "Madrid, Spain",
+    "description": "Build and maintain native iOS features for a consumer app portfolio with a strong focus on performance, subscription flows and polished user experience.",
+    "data": {
+      "technology": ["swift", "ios", "xcode"],
+      "location": "madrid",
+      "experience": "mid"
+    },
+    "content": {
+      "description": "You will join a mobile team shipping regular releases for lifestyle and productivity apps used by a broad international audience. The role covers feature implementation, app quality, analytics-informed iteration and close collaboration with design and backend teams.",
+      "responsibilities": "- Develop new Swift features for onboarding, subscriptions, profile management and notifications.\n- Maintain app stability, crash rates and performance across supported iOS versions.\n- Integrate APIs, analytics events and native platform capabilities with attention to edge cases.\n- Review pull requests and contribute to code quality, release readiness and technical planning.\n- Work with product and design to refine interactions before implementation begins.",
+      "requirements": "- Solid commercial experience building native iOS applications in Swift.\n- Good understanding of UIKit or SwiftUI and common iOS app architecture patterns.\n- Experience shipping releases through App Store Connect and handling production feedback.\n- Comfortable debugging networking issues, memory problems and UI regressions.\n- Strong collaboration skills in a cross-functional product team.",
+      "about": "AppSphere Mobile builds subscription-based mobile products that compete on everyday usefulness, clean interactions and reliable app performance rather than feature bloat."
+    }
+  },
+  {
+    "id": "0a8f1e37-2fbc-4a7c-aec8-9f1b3de27a10",
+    "title": "React Frontend Engineer",
+    "company": "BrightPixel Commerce",
+    "location": "Barcelona, Spain",
+    "description": "Create fast, conversion-focused ecommerce experiences with React and TypeScript, working on storefront performance, design system consistency and checkout usability.",
+    "data": {
+      "technology": ["react", "typescript", "css", "javascript"],
+      "location": "barcelona",
+      "experience": "mid"
+    },
+    "content": {
+      "description": "You will help build customer-facing shopping experiences used by rapidly growing retail brands. Expect a mix of component work, performance tuning, experimentation support and close coordination with designers and growth stakeholders.",
+      "responsibilities": "- Build reusable React components for product listing, cart, checkout and account areas.\n- Translate design files into production-ready interfaces with strong responsive behavior.\n- Improve Core Web Vitals, bundle size and runtime performance on high-traffic pages.\n- Support A/B experiments and ensure changes are measured without breaking UX consistency.\n- Review code and contribute to frontend standards across multiple storefront projects.",
+      "requirements": "- 3+ years of frontend experience delivering production interfaces at scale.\n- Strong React and TypeScript skills with a practical approach to state and component architecture.\n- Solid CSS knowledge, including layout systems, theming and maintainable styling patterns.\n- Experience debugging browser issues, performance bottlenecks and integration edge cases.\n- Nice to have: prior work on ecommerce, experimentation or high-traffic user journeys.",
+      "about": "BrightPixel Commerce helps modern retail brands launch and optimize storefronts that need to look premium, load quickly and convert reliably across devices and regions."
+    }
+  },
+  {
+    "id": "4c0ddc21-545a-4b0e-b7d5-0c6cbbcfaa11",
+    "title": "Node.js Backend Engineer",
+    "company": "LedgerLoop",
+    "location": "London, UK",
+    "description": "Design backend services that handle payment operations, reconciliation and audit-heavy workflows for finance teams using modern SaaS tools.",
+    "data": {
+      "technology": ["node", "postgresql", "docker"],
+      "location": "london",
+      "experience": "mid"
+    },
+    "content": {
+      "description": "You will work on services where correctness, traceability and operational reliability matter more than raw feature volume. The team owns data-intensive workflows and values engineers who can reason carefully about failure modes and API contracts.",
+      "responsibilities": "- Build and maintain Node.js services for transaction processing, webhooks and reporting.\n- Design PostgreSQL schemas and queries for reconciliation and audit use cases.\n- Improve observability with logs, metrics and alerting around critical financial flows.\n- Write integration, contract and load tests for high-risk backend paths.\n- Work with product and operations teams to clarify requirements and investigate edge-case failures.",
+      "requirements": "- Professional experience building backend services with Node.js or a similar runtime.\n- Strong SQL and relational modeling fundamentals, ideally with PostgreSQL.\n- Familiarity with Docker and local or CI-based service environments.\n- Understanding of idempotency, retries and failure handling in distributed systems.\n- Careful communication style suited to finance-adjacent product work.",
+      "about": "LedgerLoop provides payment and reconciliation infrastructure for SaaS finance teams that need better visibility and fewer manual spreadsheet-based workflows."
+    }
+  },
+  {
+    "id": "5fe6a7eb-5331-4db1-b9ef-ea0142ebad12",
+    "title": "Cloud DevOps Engineer",
+    "company": "OrbitScale",
+    "location": "Dublin, Ireland",
+    "description": "Improve AWS infrastructure, deployment pipelines and runtime resilience for a platform serving several internal products and external customer-facing services.",
+    "data": {
+      "technology": ["aws", "terraform", "docker", "kubernetes"],
+      "location": "dublin",
+      "experience": "senior"
+    },
+    "content": {
+      "description": "You will automate infrastructure management, harden environments and reduce deployment risk across a growing cloud estate. The role is suited to someone who enjoys turning brittle operational knowledge into repeatable, well-documented systems.",
+      "responsibilities": "- Manage AWS networking, compute and managed services across staging and production environments.\n- Build and maintain Terraform modules that standardize provisioning and reduce manual drift.\n- Improve containerized deployment workflows and Kubernetes runtime stability.\n- Expand monitoring, alerting and dashboarding for faster incident detection and triage.\n- Partner with engineering teams on postmortems, scaling plans and release readiness.",
+      "requirements": "- 5+ years in DevOps, infrastructure or platform engineering roles.\n- Strong hands-on AWS experience across IAM, networking, compute and observability.\n- Deep familiarity with Terraform and practical experience managing infrastructure as code.\n- Good working knowledge of Docker and Kubernetes in production.\n- Calm incident response habits and a bias for automation over tribal knowledge.",
+      "about": "OrbitScale supports software companies with shared cloud platform capabilities so product teams can move quickly without losing reliability, visibility or operational discipline."
+    }
+  },
+  {
+    "id": "58c95e68-1ddf-4b26-9700-42369f50e513",
+    "title": "Vue Frontend Developer",
+    "company": "UrbanMetrics",
+    "location": "Valencia, Spain",
+    "description": "Build analytical dashboards and mapping-heavy interfaces for mobility and infrastructure products used by city operations teams.",
+    "data": {
+      "technology": ["vue", "typescript", "css", "javascript"],
+      "location": "valencia",
+      "experience": "mid"
+    },
+    "content": {
+      "description": "You will work on complex data-rich interfaces where clarity matters more than visual decoration. The role involves building interactive dashboard modules, handling real-world datasets and improving accessibility for professional users who spend hours per day in the product.",
+      "responsibilities": "- Develop dashboard widgets, filters and workflows using Vue and TypeScript.\n- Build tables, charts and map-adjacent UI that remain usable with dense operational data.\n- Improve accessibility, keyboard navigation and overall interface clarity.\n- Collaborate with analysts and product managers to model useful frontend interactions.\n- Help debug edge cases related to large datasets, loading states and browser rendering.",
+      "requirements": "- Production experience with Vue or another modern component-based frontend framework.\n- Strong TypeScript or JavaScript fundamentals and confidence debugging state-driven UI.\n- Good CSS skills with attention to responsive layouts and long-lived maintainability.\n- Ability to work comfortably with data-heavy products rather than purely marketing websites.\n- Clear product thinking and willingness to simplify complex interactions.",
+      "about": "UrbanMetrics builds software that helps cities and infrastructure operators understand how people, vehicles and public assets move through dense urban environments."
+    }
+  },
+  {
+    "id": "be1fa695-f5ed-49dd-a8ee-860b4a80ab14",
+    "title": "Python Backend Developer",
+    "company": "SignalPath Health",
+    "location": "Toronto, Canada",
+    "description": "Build secure backend services and healthcare data integrations that connect clinics, operations teams and patient-facing systems.",
+    "data": {
+      "technology": ["python", "postgresql", "docker"],
+      "location": "toronto",
+      "experience": "mid"
+    },
+    "content": {
+      "description": "You will work on APIs and internal workflows that move sensitive operational and patient-related data between systems. The environment rewards engineers who care about correctness, traceability and thoughtful handling of privacy constraints.",
+      "responsibilities": "- Develop Python services that power scheduling, intake, messaging and reporting workflows.\n- Design PostgreSQL schemas, migrations and queries for high-integrity operational data.\n- Integrate third-party healthcare or business APIs and handle failures gracefully.\n- Expand automated test coverage around critical business logic and data validation.\n- Work with support and product teams to diagnose issues that affect clinics and internal staff.",
+      "requirements": "- Strong professional experience building backend systems in Python.\n- Working knowledge of PostgreSQL, API design and service-level debugging.\n- Comfortable with containerized development and CI-based testing workflows.\n- Appreciation for privacy, auditability and correctness in regulated environments.\n- Good communication with non-engineering stakeholders handling operational processes.",
+      "about": "SignalPath Health builds software for healthcare operations teams that need better coordination between patient workflows, internal staff processes and fragmented legacy systems."
+    }
+  },
+  {
+    "id": "69baff0c-dc03-4d2d-b4e7-3d61c7f6bd15",
+    "title": "Java Software Engineer",
+    "company": "TransitCore",
+    "location": "Berlin, Germany",
+    "description": "Work on backend systems that coordinate schedules, ticketing and operator data for public transport providers with high uptime requirements.",
+    "data": {
+      "technology": ["java", "postgresql", "docker"],
+      "location": "berlin",
+      "experience": "senior"
+    },
+    "content": {
+      "description": "You will contribute to services that support real transport operations, where data quality and service availability have visible impact on daily users. The role includes feature development, architecture participation and mentoring within a mature engineering team.",
+      "responsibilities": "- Implement backend services in Java for scheduling, routing and fare-management workflows.\n- Optimize SQL queries and data-access patterns for reliability under operational load.\n- Review technical designs and help modernize older services incrementally.\n- Mentor mid-level engineers through code reviews and system design discussions.\n- Work with QA and operations teams during releases and incident follow-up.",
+      "requirements": "- 5+ years of backend engineering experience with Java in production systems.\n- Strong database fundamentals and confidence analyzing query performance.\n- Experience with service-oriented or event-driven architectures.\n- Familiarity with Docker-based environments and CI/CD release processes.\n- Ability to balance system modernization with the realities of long-lived products.",
+      "about": "TransitCore builds core software for transportation providers that need dependable scheduling, ticketing and operational reporting systems rather than flashy but fragile platforms."
+    }
+  },
+  {
+    "id": "426f6e56-fdf1-4200-913e-f75b4e03f216",
+    "title": "PHP Full Stack Engineer",
+    "company": "MarketDock",
+    "location": "Mexico City, Mexico",
+    "description": "Maintain and evolve a B2B marketplace platform spanning catalog management, ordering workflows and internal admin tooling across frontend and backend layers.",
+    "data": {
+      "technology": ["php", "javascript", "mysql", "css"],
+      "location": "cdmx",
+      "experience": "mid"
+    },
+    "content": {
+      "description": "You will ship practical business features in a product with meaningful legacy complexity and clear commercial impact. The team needs someone comfortable improving existing systems while still delivering new capabilities on a predictable cadence.",
+      "responsibilities": "- Build and update frontend flows for catalog browsing, order management and merchant administration.\n- Maintain PHP services and business logic used by buyers, sellers and operations staff.\n- Improve MySQL queries, data integrity and performance in critical reporting screens.\n- Troubleshoot production issues, regressions and integration failures with pragmatic speed.\n- Participate in technical cleanup work that reduces risk in older areas of the codebase.",
+      "requirements": "- Solid PHP experience in real production applications, ideally beyond toy CRUD work.\n- Good JavaScript fundamentals and enough frontend confidence to ship UI changes independently.\n- Practical experience with MySQL, debugging slow queries and data-related bugs.\n- Comfortable working in a mixed codebase with legacy constraints and gradual modernization.\n- Strong ownership mindset and good communication with product and support teams.",
+      "about": "MarketDock operates a B2B commerce platform used by distributors and retailers across Latin America, where operational reliability and clear business workflows matter more than trend-driven stack decisions."
+    }
+  },
+  {
+    "id": "9838e90e-ae0a-438d-8b80-adf8bb18dc17",
+    "title": "Junior QA Analyst",
+    "company": "TestHarbor",
+    "location": "Remote",
+    "description": "Start a QA career working on manual validation, bug reporting and early automation support across fast-moving web product teams.",
+    "data": {
+      "technology": ["jest", "cypress", "javascript"],
+      "location": "remote",
+      "experience": "junior"
+    },
+    "content": {
+      "description": "You will help product and engineering teams catch issues before release by running structured test plans, documenting defects clearly and learning how automation fits into a broader quality process. The role is intentionally hands-on and mentorship-oriented.",
+      "responsibilities": "- Execute manual test plans for new features, regressions and release candidates.\n- Reproduce reported bugs consistently and document clear steps, expected behavior and actual results.\n- Maintain smoke test checklists and help keep basic automated checks up to date.\n- Collaborate with developers and product managers to clarify acceptance criteria.\n- Support release readiness reviews by highlighting risk areas and unresolved issues.",
+      "requirements": "- Basic JavaScript knowledge and confidence navigating modern web applications.\n- Strong written communication and attention to detail when reporting issues.\n- Interest in software quality, test design and learning automation over time.\n- Organized working style with patience for repetitive validation work when needed.\n- Ability to work well in a remote team with clear async updates.",
+      "about": "TestHarbor helps product teams improve release confidence through practical QA processes, better bug reporting and lightweight automation tailored to real delivery constraints."
+    }
+  },
+  {
+    "id": "0571810b-6331-4251-8c6b-5ee3d0dbf818",
+    "title": "Lead Frontend Architect",
+    "company": "Northstar Media Cloud",
+    "location": "San Francisco, USA",
+    "description": "Set frontend direction across multiple web products, balancing architecture, team enablement and delivery standards for high-traffic media experiences.",
+    "data": {
+      "technology": ["react", "typescript", "javascript", "css"],
+      "location": "sf",
+      "experience": "lead"
+    },
+    "content": {
+      "description": "You will define architectural patterns, guide frontend platform decisions and help several teams converge on maintainable ways of building complex user interfaces. The role is technical and strategic, not just managerial, and includes mentoring senior engineers.",
+      "responsibilities": "- Define frontend architecture standards for shared foundations, state management and deployment practices.\n- Lead design system adoption across multiple product squads and partner closely with design leadership.\n- Mentor senior and staff engineers through design reviews, code reviews and technical planning.\n- Evaluate tradeoffs between speed, consistency and long-term maintainability across several applications.\n- Work with product and engineering leadership to align roadmap goals with platform investment.",
+      "requirements": "- 8+ years in frontend engineering with significant experience leading architecture decisions.\n- Deep expertise in React, TypeScript and large-scale UI system design.\n- Track record of scaling frontend practices across multiple teams or products.\n- Strong communication skills with both technical and executive stakeholders.\n- Comfort making opinionated decisions and documenting them clearly for broad adoption.",
+      "about": "Northstar Media Cloud runs content, subscription and publishing platforms that serve large audiences and need frontend systems that can evolve quickly without collapsing under inconsistency."
+    }
+  },
+  {
+    "id": "7f646d4d-947d-4e09-9aca-3205fd8ead19",
+    "title": "Data Engineering Intern",
+    "company": "Harbor Analytics",
+    "location": "London, UK",
+    "description": "Internship focused on ETL workflows, data quality checks and internal reporting tools built with Python and SQL.",
+    "data": {
+      "technology": ["python", "sql", "postgresql"],
+      "location": "london",
+      "experience": "internship"
+    },
+    "content": {
+      "description": "You will support analytics and data engineering work on ingestion pipelines, data cleanup tasks and lightweight reporting automation. This is a practical internship intended to teach production habits, not just isolated notebook work.",
+      "responsibilities": "- Build and update ETL scripts that collect and transform operational data.\n- Validate datasets, investigate anomalies and document data quality issues.\n- Help maintain source documentation, table definitions and reporting assumptions.\n- Support analysts with recurring reporting workflows and dashboard data preparation.\n- Learn team conventions around version control, testing and code review.",
+      "requirements": "- Coursework, internship or project experience using Python for data-related tasks.\n- Basic SQL knowledge and comfort querying relational datasets.\n- Curiosity about how raw data becomes reporting and decision-making output.\n- Willingness to learn production engineering practices, not just analysis tooling.\n- Availability for the full internship period and regular collaboration hours.",
+      "about": "Harbor Analytics provides reporting and forecasting tools for logistics and operations teams that need cleaner data pipelines and more trustworthy business visibility."
+    }
+  },
+  {
+    "id": "8d7dc48b-cb90-4f7b-b782-69916b2f8b20",
+    "title": "Freelance React Developer",
+    "company": "Studio Meridian",
+    "location": "Remote",
+    "description": "Short-term freelance engagement to deliver a React marketing site, CMS integration and launch-ready performance polish for a startup rebrand.",
+    "data": {
+      "technology": ["react", "javascript", "css", "html"],
+      "location": "remote",
+      "experience": "freelance"
+    },
+    "content": {
+      "description": "You will take a project from approved designs to production launch, working directly with a small client team and limited process overhead. The work suits someone comfortable moving independently, raising issues early and finishing details without heavy supervision.",
+      "responsibilities": "- Build responsive marketing pages and reusable content sections in React.\n- Integrate a headless CMS and ensure editors can manage content without developer support.\n- Optimize page performance, animation smoothness and SEO-related implementation details.\n- Coordinate directly with design and stakeholders during review cycles and launch prep.\n- Deliver concise handoff notes covering setup, deployment and content editing constraints.",
+      "requirements": "- Strong experience shipping React projects from design handoff to production.\n- Ability to work autonomously and make sensible implementation decisions quickly.\n- Good communication with non-technical stakeholders during review and feedback cycles.\n- Solid CSS and frontend performance fundamentals.\n- Availability for a focused short-term contract with reliable delivery dates.",
+      "about": "Studio Meridian helps startups launch brands, websites and early product surfaces quickly, usually with lean teams that need strong individual contributors rather than large agency process."
+    }
+  },
+  {
+    "id": "ee3e3f6f-1f44-45d2-b02f-2d64d60b2421",
+    "title": "Machine Learning Engineer",
+    "company": "VisionRail",
+    "location": "Boston, USA",
+    "description": "Build computer vision models and production ML systems for industrial monitoring, with a focus on deployment reliability and measurable field performance.",
+    "data": {
+      "technology": ["python", "tensorflow", "aws"],
+      "location": "boston",
+      "experience": "senior"
+    },
+    "content": {
+      "description": "You will work on end-to-end ML systems that move beyond experimentation into real operational environments. The role combines modeling, data pipeline work, inference optimization and production monitoring for systems where false positives and missed detections both carry real cost.",
+      "responsibilities": "- Train and evaluate computer vision models for inspection, anomaly detection and monitoring use cases.\n- Build model-serving APIs and supporting data pipelines for production deployment.\n- Improve inference speed, resource usage and deployment reliability across environments.\n- Monitor model drift, accuracy and operational performance after release.\n- Collaborate with domain experts to translate field constraints into practical ML decisions.",
+      "requirements": "- Strong background in Python and machine learning engineering for production systems.\n- Experience with TensorFlow or equivalent deep learning frameworks.\n- Familiarity with AWS services used for training, deployment and monitoring workloads.\n- Practical understanding of data versioning, experiment tracking and model lifecycle management.\n- Ability to balance research curiosity with delivery discipline and operational realism.",
+      "about": "VisionRail applies machine learning to industrial inspection and monitoring problems where models need to survive messy real-world conditions, not just perform well on curated sample datasets."
+    }
+  },
+  {
+    "id": "d03e07cf-cfcf-4c30-bc42-9c6f9775df22",
+    "title": "Product Designer",
+    "company": "CanvasGrid",
+    "location": "Paris, France",
+    "description": "Design polished workflows and scalable interface patterns for a collaborative B2B product, with strong influence on both usability and visual systems.",
+    "data": {
+      "technology": ["figma", "prototyping", "css"],
+      "location": "paris",
+      "experience": "mid"
+    },
+    "content": {
+      "description": "You will work with product managers and engineers to shape new features from early concepts through detailed interaction design. The role suits a designer who can handle systems thinking, not just screens, and who cares about how designs survive implementation.",
+      "responsibilities": "- Create flows, wireframes and high-fidelity mockups for complex product journeys.\n- Prototype interactions in Figma to validate ideas before engineering starts.\n- Contribute to the design system and maintain consistency across product surfaces.\n- Support usability validation and incorporate findings into iterative improvements.\n- Collaborate closely with engineers to ensure shipped details match intent and remain practical.",
+      "requirements": "- Strong Figma portfolio showing product work beyond simple landing pages.\n- Experience designing dense or workflow-heavy interfaces with multiple states and edge cases.\n- Ability to think in systems, patterns and reusable interaction models.\n- Clear collaboration habits with product and engineering teams.\n- Comfort receiving feedback grounded in business, technical and user constraints.",
+      "about": "CanvasGrid builds workflow software for creative and operations teams that need clean, efficient tools to manage approvals, assets and recurring cross-team collaboration."
+    }
+  },
+  {
+    "id": "9bdf6d85-cb22-4525-80f3-badbbbe02e23",
+    "title": "Senior SRE",
+    "company": "ScaleFoundry",
+    "location": "Remote",
+    "description": "Improve reliability, observability and incident response across a cloud-native platform supporting several product teams and demanding uptime expectations.",
+    "data": {
+      "technology": ["aws", "kubernetes", "terraform", "python"],
+      "location": "remote",
+      "experience": "senior"
+    },
+    "content": {
+      "description": "You will work on systems reliability, operational standards and resilience improvements across infrastructure and deployment pipelines. The role is a mix of hands-on technical work, incident leadership and long-term reduction of recurring operational pain.",
+      "responsibilities": "- Expand observability coverage with actionable dashboards, alerts and service-level indicators.\n- Harden deployment and rollback paths across Kubernetes-based services.\n- Lead incident response, postmortems and follow-up work that reduces repeat failures.\n- Automate operational tasks using Terraform, Python and internal platform tooling.\n- Partner with engineers to improve production readiness before problems appear in live traffic.",
+      "requirements": "- Significant experience in SRE, platform engineering or production operations roles.\n- Strong AWS and automation background with practical infrastructure-as-code skills.\n- Comfort operating Kubernetes and troubleshooting production incidents under pressure.\n- Ability to separate signal from noise during outages and communicate clearly.\n- Bias toward sustainable reliability work rather than heroic one-off fixes.",
+      "about": "ScaleFoundry helps software companies build more reliable production systems by combining modern cloud infrastructure practices with disciplined operational engineering."
+    }
+  },
+  {
+    "id": "b2432527-f4ee-43df-a551-0d288b120f24",
+    "title": "Mobile App Developer",
+    "company": "Northwave Health",
+    "location": "Manchester, UK",
+    "description": "Build cross-platform mobile features with Flutter and Firebase for patient-facing health products that prioritize usability, trust and clear communication.",
+    "data": {
+      "technology": ["flutter", "firebase", "javascript"],
+      "location": "manchester",
+      "experience": "mid"
+    },
+    "content": {
+      "description": "You will work on onboarding, care reminders, messaging and data capture flows for a health product suite used by patients outside clinical settings. The team cares about straightforward UX, resilient mobile behavior and close coordination with backend and QA colleagues.",
+      "responsibilities": "- Implement Flutter-based user flows for onboarding, appointments, reminders and progress tracking.\n- Integrate Firebase services for notifications, analytics and backend-connected app features.\n- Improve app stability, offline behavior and device-level performance.\n- Collaborate with QA, design and backend engineers on release quality and feature details.\n- Help refine mobile UX to reduce confusion for less technical users.",
+      "requirements": "- Professional experience shipping mobile apps with Flutter.\n- Familiarity with Firebase services and typical mobile backend integration patterns.\n- Attention to interaction detail, accessibility and app reliability.\n- Comfortable working with cross-functional teams in a regulated or privacy-aware domain.\n- Good debugging habits across real devices, emulators and release builds.",
+      "about": "Northwave Health creates digital tools that help patients stay informed and engaged between appointments, with a focus on clarity, trust and dependable mobile delivery."
+    }
+  },
+  {
+    "id": "3c6d0a73-a0db-40a0-b7b1-cd52e6d2d525",
+    "title": "Frontend Internship",
+    "company": "SignalSpring",
+    "location": "Lisbon, Portugal",
+    "description": "Frontend internship centered on accessible UI implementation, design handoff support and day-to-day product maintenance in a component-based codebase.",
+    "data": {
+      "technology": ["html", "css", "javascript", "react"],
+      "location": "lisbon",
+      "experience": "internship"
+    },
+    "content": {
+      "description": "You will support the frontend team with implementation tasks, QA fixes and accessibility improvements while learning how professional product teams structure work. The internship is designed to build production habits, not just isolated coding exercises.",
+      "responsibilities": "- Implement small interface tasks and bug fixes under guidance from frontend engineers.\n- Fix styling inconsistencies and check pages across common screen sizes and browsers.\n- Assist with accessibility improvements such as labels, focus states and semantic markup.\n- Test pages on desktop and mobile and document issues clearly.\n- Learn team conventions around tickets, pull requests and code review feedback.",
+      "requirements": "- Basic HTML, CSS and JavaScript skills from coursework, bootcamp or personal projects.\n- Interest in React and component-based frontend development.\n- Good attention to detail and willingness to polish small issues properly.\n- Receptive attitude toward feedback and iterative improvement.\n- Reliable availability for the duration of the internship.",
+      "about": "SignalSpring builds internal tools and lightweight digital products for service businesses that need practical software improvements more than large-scale custom platforms."
+    }
+  },
+  {
+    "id": "0dca6a5a-02e7-4226-a2b9-47ac56217b26",
+    "title": "Database Engineer",
+    "company": "DataQuarry",
+    "location": "Chicago, USA",
+    "description": "Own schema design, query performance and data reliability for an analytics platform serving product, finance and operations teams.",
+    "data": {
+      "technology": ["postgresql", "mysql", "python", "sql"],
+      "location": "chicago",
+      "experience": "senior"
+    },
+    "content": {
+      "description": "You will focus on the health of core data stores used by multiple teams, balancing performance, maintainability and operational safety. The role spans schema strategy, query tuning, backup discipline and close collaboration with engineers building data-intensive features.",
+      "responsibilities": "- Tune slow SQL queries and identify bottlenecks in high-traffic data access paths.\n- Design schemas, indexes and migration strategies that support evolving product needs.\n- Improve backup, restore and recovery procedures for critical databases.\n- Support product and data teams with modeling decisions and reliability concerns.\n- Build lightweight automation or diagnostics in Python for recurring operational tasks.",
+      "requirements": "- Advanced SQL knowledge and strong intuition for query planning and indexing.\n- Hands-on experience tuning PostgreSQL or MySQL in production environments.\n- Comfort handling migrations, schema evolution and operational safeguards.\n- Some scripting ability for automation, diagnostics or maintenance work.\n- Methodical debugging habits and strong sense of data correctness.",
+      "about": "DataQuarry provides analytics infrastructure for growing software and marketplace businesses that depend on trustworthy operational data and responsive reporting systems."
+    }
+  },
+  {
+    "id": "14ab0aa9-9cb1-43ae-a31e-4ba90cdb8527",
+    "title": "Freelance UI Engineer",
+    "company": "Polar Thread",
+    "location": "Amsterdam, Netherlands",
+    "description": "Freelance engagement to implement a lightweight design system and polished marketing pages for an early-stage brand refresh.",
+    "data": {
+      "technology": ["css", "html", "javascript", "figma"],
+      "location": "amsterdam",
+      "experience": "freelance"
+    },
+    "content": {
+      "description": "You will work directly from design mocks and prototypes to create reusable UI foundations and launch-ready page templates. The client is small, the turnaround is fast and the work requires someone who can make clean implementation choices without a lot of process.",
+      "responsibilities": "- Build reusable UI primitives and page sections that support multiple marketing pages.\n- Convert Figma designs into production-ready HTML, CSS and JavaScript.\n- Improve responsiveness, spacing consistency and visual polish across breakpoints.\n- Coordinate feedback cycles with a small product and brand team.\n- Prepare concise implementation notes for future handoff or extension work.",
+      "requirements": "- Strong HTML and CSS skills with a clear eye for detail and layout quality.\n- Comfortable translating Figma designs into real interfaces without heavy supervision.\n- Able to work independently, estimate effort and flag risks early.\n- Good communication during iterative review cycles.\n- Availability for a fixed-term freelance contract with defined milestones.",
+      "about": "Polar Thread supports early-stage companies that need credible brand systems and frontend delivery without hiring a full in-house design and engineering team."
+    }
+  },
+  {
+    "id": "c67ff5ea-6d5f-4dd2-8153-1fe480122828",
+    "title": "Senior Full Stack Engineer",
+    "company": "AtlasHQ",
+    "location": "Remote",
+    "description": "Lead delivery across React, Node.js and PostgreSQL for a B2B operations product, owning features from discovery through production rollout.",
+    "data": {
+      "technology": ["react", "node", "typescript", "postgresql"],
+      "location": "remote",
+      "experience": "senior"
+    },
+    "content": {
+      "description": "You will own large product areas, shape architecture where it matters and mentor teammates without drifting into unnecessary abstraction. The team needs someone who can move comfortably between customer-facing UI, backend services and data design.",
+      "responsibilities": "- Deliver end-to-end product features across frontend, APIs and database layers.\n- Improve architecture in high-impact areas without creating framework-heavy overhead.\n- Lead technical discussions, clarify tradeoffs and help scope work realistically.\n- Mentor engineers through pairing, reviews and pragmatic design feedback.\n- Collaborate with product, design and support on roadmap items and production issues.",
+      "requirements": "- 6+ years of software engineering experience with substantial full-stack ownership.\n- Strong React and Node.js background in production applications.\n- Good TypeScript and SQL skills, including schema design and query reasoning.\n- Ability to balance product speed with maintainability and operational concerns.\n- Comfortable working in a remote team with clear written communication.",
+      "about": "AtlasHQ builds internal operations software for distributed teams that need to manage workflows, approvals and reporting without forcing every process through spreadsheets and manual coordination."
+    }
+  },
+  {
+    "id": "d34b48d0-d563-4227-a60e-a71315b3be29",
+    "title": "Lead Data Platform Engineer",
+    "company": "BluePeak Insights",
+    "location": "New York, USA",
+    "description": "Define the next stage of a data platform that supports analytics, ML workflows and self-serve reporting across several business units.",
+    "data": {
+      "technology": ["python", "sql", "aws", "postgresql"],
+      "location": "nyc",
+      "experience": "lead"
+    },
+    "content": {
+      "description": "You will shape platform standards, guide roadmap priorities and help the team scale ingestion, transformation and governance practices without turning the platform into a bottleneck. The role requires technical depth and strong judgment about where standardization is worth the effort.",
+      "responsibilities": "- Lead platform architecture decisions across ingestion, storage, transformation and access layers.\n- Improve pipeline reliability, data quality checks and observability for critical datasets.\n- Mentor senior engineers and set expectations for maintainable platform patterns.\n- Collaborate with analytics, machine learning and business stakeholders on platform priorities.\n- Help define governance practices that improve trust in data without overcomplicating delivery.",
+      "requirements": "- 8+ years in data engineering, backend engineering or closely related platform work.\n- Strong Python and SQL skills with production experience building or operating data systems.\n- Familiarity with AWS-based data infrastructure and relational storage patterns.\n- Proven technical leadership with the ability to influence teams beyond direct reporting lines.\n- Pragmatic mindset about balancing platform investment with business impact.",
+      "about": "BluePeak Insights builds shared data capabilities for organizations that want more reliable reporting, cleaner data workflows and a stronger foundation for analytics and machine learning teams."
+    }
+  }
+]

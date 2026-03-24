@@ -1,0 +1,79 @@
+.title {
+  text-decoration: none;
+  color: inherit !important;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.details {
+  color: var(--primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.jobListingCard {
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  border-bottom: 1px solid var(--border);
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 1rem;
+}
+
+.jobListingCard:last-child {
+  border-bottom: none;
+}
+
+.jobListingCard small {
+  font-size: 0.875rem;
+  opacity: 0.75;
+}
+
+.jobListingCard p {
+  margin-top: 0.5rem;
+}
+
+.isHidden {
+  display: none;
+}
+
+.isSkeleton {
+  align-items: center;
+  pointer-events: none;
+}
+
+.isSkeleton > div:first-child {
+  flex: 1;
+}
+
+@media (max-width: 640px) {
+  .jobListingCard {
+    flex-direction: column;
+  }
+
+  .isSkeleton {
+    align-items: start;
+  }
+
+  .actions {
+    margin-top: 2rem;
+    align-self: end;
+    flex-direction: row;
+    align-items: center;
+  }
+}

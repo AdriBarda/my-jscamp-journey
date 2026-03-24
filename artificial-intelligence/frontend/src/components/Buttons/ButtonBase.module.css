@@ -1,0 +1,25 @@
+.primaryButton {
+  background: var(--primary);
+  color: white;
+  border: none;
+  font-weight: 600;
+  min-height: 44px;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+.primaryButton:hover {
+  background: var(--primary-600);
+}
+
+.primaryButton:disabled {
+  background: var(--primary);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.primaryButton:disabled:hover {
+  background: var(--primary-700);
+}

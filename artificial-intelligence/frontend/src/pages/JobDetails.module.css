@@ -95,6 +95,11 @@
   align-items: start;
 }
 
+.summaryError {
+  color: #b42318;
+  margin: -1.5rem 0 2rem;
+}
+
 @media (max-width: 1023px) {
   .header {
     & > div {
@@ -113,57 +118,4 @@
     width: 100%;
     margin-bottom: 1.5rem;
   }
-}
-
-.section {
-  margin-bottom: 3rem;
-
-  article {
-    max-width: 100ch;
-    background: none;
-    box-shadow: none;
-    border-radius: 0;
-    padding: 0;
-
-    h2 {
-      font-size: 1.875rem;
-      margin-bottom: 0.5rem;
-    }
-  }
-}
-
-.sectionContent {
-  color: var(--text-muted);
-}
-
-.sectionContent ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sectionContent li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-}
-
-.sectionContent li::before {
-  content: '';
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  background-color: var(--primary);
-  -webkit-mask: url('../assets/circleCheck.svg') no-repeat center / contain;
-  mask: url('../assets/circleCheck.svg') no-repeat center / contain;
-  flex: 0 0 20px;
-  margin-top: 0.2rem;
-}
-.sectionTitle {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--text);
-  margin-bottom: 1rem;
 }

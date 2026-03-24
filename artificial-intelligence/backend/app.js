@@ -2,9 +2,12 @@ import express from 'express'
 import { corsMiddleware } from './middlewares/cors.js'
 import { jobsRouter } from './routes/jobs.js'
 import { loggerMiddleware } from './middlewares/logger.js'
+import { aiRouter } from './routes/ai.js'
 
 const PORT = process.env.PORT || 1234
 const app = express()
+
+app.set('trust-proxy', 1) // Trust the first reverse proxy so Express can read the real client IP/protocol from forwarded headers
 
 app.use(loggerMiddleware)
 app.use(corsMiddleware())
@@ -24,6 +27,8 @@ app.get('/health', (req, res) => {
 })
 
 app.use('/jobs', jobsRouter)
+
+app.use('/ai', aiRouter)
 
 if (!process.env.NODE_ENV) {
   app.listen(PORT, () => {

@@ -1,38 +1,31 @@
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router'
 import { Link } from '../components/Link'
-import snarkdown from 'snarkdown'
 import styles from './JobDetails.module.css'
 import { FallbackLoadingComponent } from '../components/FallbackLoadingComponent'
 
 import { AddToFavoritesButton } from '../components/Buttons/AddToFavoritesButton.jsx'
 import { ApplyButton } from '../components/Buttons/ApplyButton.jsx'
+import { AISummaryButton } from '../components/Buttons/AISummaryButton.jsx'
+import { JobSection } from '../components/JobSection.jsx'
+import { useAISummary } from '../hooks/useAISummary.jsx'
 
-function JobSection({ title, content }) {
-  const html = snarkdown(content)
-  return (
-    <section className={styles.section}>
-      <h2 className={styles.sectionTitle}>{title}</h2>
-      <article className="prose">
-        <div
-          className={styles.sectionContent}
-          dangerouslySetInnerHTML={{
-            __html: html
-          }}
-        />
-      </article>
-    </section>
-  )
-}
+const apiBaseUrl = import.meta.env.VITE_APP_BASE_URL
 
 export default function JobDetails() {
   const { jobId } = useParams()
   const navigate = useNavigate()
-  const apiBaseUrl = import.meta.env.VITE_APP_BASE_URL
 
   const [job, setJob] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+
+  const {
+    summary,
+    loading: summaryLoading,
+    error: summaryError,
+    generateSummary
+  } = useAISummary(jobId)
 
   useEffect(() => {
     fetch(`${apiBaseUrl}/jobs/${jobId}`)
@@ -47,7 +40,7 @@ export default function JobDetails() {
       .then((json) => setJob(json))
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false))
-  }, [apiBaseUrl, jobId, navigate])
+  }, [jobId, navigate])
 
   if (loading) {
     return <FallbackLoadingComponent />
@@ -92,7 +85,14 @@ export default function JobDetails() {
       <div className={styles.actions} style={{ marginBlock: '3rem' }}>
         <ApplyButton jobId={job.id} />
         <AddToFavoritesButton jobId={job.id} />
+        <AISummaryButton
+          loading={summaryLoading}
+          hasSummary={Boolean(summary)}
+          onClick={generateSummary}
+        />
       </div>
+      {summaryError ? <p className={styles.summaryError}>{summaryError}</p> : null}
+      {summary ? <JobSection title="✨ AI Summary" content={summary} /> : null}
       <JobSection title="Job description" content={job.content?.description ?? ''} />
       <JobSection title="Responsibilities" content={job.content?.responsibilities ?? ''} />
       <JobSection title="Job Requirements" content={job.content?.requirements ?? ''} />

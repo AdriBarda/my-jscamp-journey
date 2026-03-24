@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useAuthStore } from '../../store/auth'
 import styles from './ApplyButton.module.css'
+import buttonStyles from './ButtonBase.module.css'
 
 export function ApplyButton({ jobId }) {
   const { isLoggedIn } = useAuthStore()
@@ -11,12 +12,12 @@ export function ApplyButton({ jobId }) {
     setIsApplied(true)
   }
 
-  const buttonStyles = [styles.applyButton, isApplied ? styles.isApplied : '']
+  const classes = [buttonStyles.primaryButton, isApplied ? styles.isApplied : '']
     .filter(Boolean)
     .join(' ')
 
   return (
-    <button className={buttonStyles} disabled={!isLoggedIn || isApplied} onClick={handleApply}>
+    <button className={classes} disabled={!isLoggedIn || isApplied} onClick={handleApply}>
       {isApplied ? 'Applied!' : 'Apply'}
     </button>
   )

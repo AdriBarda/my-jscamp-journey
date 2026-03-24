@@ -1,5 +1,6 @@
 {
-  "name": "express",
+  "name": "@artificial-intelligence/backend",
+  "private": true,
   "version": "1.0.0",
   "description": "",
   "main": "app.js",

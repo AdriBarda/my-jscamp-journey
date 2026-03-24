@@ -1,0 +1,16 @@
+{
+  "name": "artificial-intelligence",
+  "private": true,
+  "version": "1.0.0",
+  "description": "pnpm workspace for the artificial-intelligence frontend and backend apps",
+  "scripts": {
+    "dev:frontend": "pnpm --filter @artificial-intelligence/frontend dev",
+    "dev:backend": "pnpm --filter @artificial-intelligence/backend dev",
+    "build": "pnpm --filter @artificial-intelligence/frontend build",
+    "test": "pnpm --filter @artificial-intelligence/backend test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.30.0"
+}

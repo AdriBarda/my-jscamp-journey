@@ -8,6 +8,7 @@ import { AddToFavoritesButton } from '../components/Buttons/AddToFavoritesButton
 import { ApplyButton } from '../components/Buttons/ApplyButton.jsx'
 import { AISummaryButton } from '../components/Buttons/AISummaryButton.jsx'
 import { JobSection } from '../components/JobSection.jsx'
+import { MarkdownContent } from '../components/MarkdownContent.jsx'
 import { useAISummary } from '../hooks/useAISummary.jsx'
 
 const apiBaseUrl = import.meta.env.VITE_APP_BASE_URL
@@ -92,11 +93,23 @@ export default function JobDetails() {
         />
       </div>
       {summaryError ? <p className={styles.summaryError}>{summaryError}</p> : null}
-      {summary ? <JobSection title="✨ AI Summary" content={summary} /> : null}
-      <JobSection title="Job description" content={job.content?.description ?? ''} />
-      <JobSection title="Responsibilities" content={job.content?.responsibilities ?? ''} />
-      <JobSection title="Job Requirements" content={job.content?.requirements ?? ''} />
-      <JobSection title="About" content={job.content?.about ?? ''} />
+      {summary ? (
+        <JobSection title="✨ AI Summary">
+          <MarkdownContent content={summary} streaming loading={summaryLoading} />
+        </JobSection>
+      ) : null}
+      <JobSection title="Job description">
+        <MarkdownContent content={job.content?.description ?? ''} />
+      </JobSection>
+      <JobSection title="Responsibilities">
+        <MarkdownContent content={job.content?.responsibilities ?? ''} />
+      </JobSection>
+      <JobSection title="Job Requirements">
+        <MarkdownContent content={job.content?.requirements ?? ''} />
+      </JobSection>
+      <JobSection title="About">
+        <MarkdownContent content={job.content?.about ?? ''} />
+      </JobSection>
     </div>
   )
 }
